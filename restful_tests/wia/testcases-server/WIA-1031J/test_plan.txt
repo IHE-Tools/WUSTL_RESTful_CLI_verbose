@@ -1,0 +1,9 @@
+Title	WIA-1031J
+Description	Query by Patient Name / DICOM Keyword
+Path	/studies
+Query	PatientName=C3N-00953*
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

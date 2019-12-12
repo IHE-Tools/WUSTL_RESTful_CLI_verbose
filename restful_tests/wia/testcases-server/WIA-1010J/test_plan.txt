@@ -1,0 +1,9 @@
+Title	WIA-1010J
+Description	Query by Accession Number / DICOM Tag
+Path	/studies
+Query	00080050=2794663908550664
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

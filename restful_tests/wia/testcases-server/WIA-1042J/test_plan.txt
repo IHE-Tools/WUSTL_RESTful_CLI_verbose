@@ -1,0 +1,9 @@
+Title	WIA-1042J
+Description	Retrieve studies using a Patient Name that is not found
+Path	/studies
+Query	00080061=MR
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	204

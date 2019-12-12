@@ -1,0 +1,9 @@
+Title	WIA-1044J
+Description	Query by Modalities in Study / DICOM Tag (CT,OT data)
+Path	/studies
+Query	00080061=CT,OT
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

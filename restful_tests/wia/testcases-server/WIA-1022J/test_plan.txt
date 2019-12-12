@@ -1,0 +1,9 @@
+Title	WIA-1022J
+Description	Retrieve studies using a Patient ID that is not found
+Path	/studies
+Query	PatientID=C3N00953x
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	204

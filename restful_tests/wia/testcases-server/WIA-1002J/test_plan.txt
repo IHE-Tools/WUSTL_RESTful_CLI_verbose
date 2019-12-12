@@ -1,0 +1,7 @@
+Title	Test-002
+Description	Pull all studies from a server and compare to a reference response
+Query	/studies
+Level	Study
+Reference	reference.json
+Elements	elements.txt
+Responses	200

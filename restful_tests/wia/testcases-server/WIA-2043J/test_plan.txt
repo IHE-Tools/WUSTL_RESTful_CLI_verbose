@@ -1,0 +1,9 @@
+Title	WIA-2042J
+Description	Search series by Series Instance UID / value does not exist
+Path	/studies/1.3.6.1.4.1.14519.5.2.1.3023.4017.246199836259881483055596634768/series
+Query	0020000E=1.3.6.1.4.1.14519.5.2.1.3023.4017.1010629001568085132334282147*
+Level	Series
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	204

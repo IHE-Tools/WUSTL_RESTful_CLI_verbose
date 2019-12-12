@@ -1,0 +1,9 @@
+Title	WIA-2030J
+Description	Series with Series Number = 1/ DICOM Tag
+Path	/studies/1.3.6.1.4.1.14519.5.2.1.3023.4017.246199836259881483055596634768/series
+Query	00200011=3001
+Level	Series
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

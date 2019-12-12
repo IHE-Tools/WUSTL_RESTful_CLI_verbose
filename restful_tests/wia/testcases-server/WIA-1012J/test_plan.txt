@@ -1,0 +1,9 @@
+Title	WIA-1012J
+Description	Retrieve studies using an Accession Number that is not found
+Path	/studies
+Query	AccessionNumber=xxx4663908550664
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	204

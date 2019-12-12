@@ -1,0 +1,7 @@
+.idea
+*.iml
+*.log
+/out
+/target
+*.DS_Store
+src/test/resources/data

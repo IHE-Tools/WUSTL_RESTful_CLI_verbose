@@ -1,0 +1,9 @@
+Title	WIA-1062J
+Description	Retrieve studies using a Study Date that is not found
+Path	/studies
+Query	00080020=19820101
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	204

@@ -1,0 +1,9 @@
+Title	WIA-1060J
+Description	Query by Study Date / DICOM Tag
+Path	/studies
+Query	00080020=19990416
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

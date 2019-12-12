@@ -1,0 +1,9 @@
+Title	WIA-1041J
+Description	Query by Modalities in Study / DICOM Keyword
+Path	/studies
+Query	ModalitiesInStudy=CT
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

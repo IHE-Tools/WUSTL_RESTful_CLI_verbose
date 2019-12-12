@@ -1,0 +1,8 @@
+Title	WIA-1001J
+Description	Pull all studies from a server and look for required elements
+Path	/studies
+Query	
+Level	Study
+ObjectCount	FOO
+Elements	elements.txt
+Responses	200

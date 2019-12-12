@@ -1,0 +1,6 @@
+Title	Test-011
+Description	Retrieve by Patient ID / Element Tag
+Query	/studies?00100020=C3N-00953
+Reference	reference.json
+Elements	elements.txt
+Responses	200,201,202

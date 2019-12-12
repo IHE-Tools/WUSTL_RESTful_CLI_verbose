@@ -1,0 +1,9 @@
+Title	WIA-1011J
+Description	Query by Accession Number / DICOM Keyword
+Path	/studies
+Query	AccessionNumber=2794663908550664
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+Elements	elements.txt
+Responses	200

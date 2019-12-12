@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.nrg</groupId>
+        <artifactId>test_dependencies</artifactId>
+        <version>2.0.1</version>
+    </parent>
+
+    <groupId>org.nrg.xnat</groupId>
+    <artifactId>WUSTL-RESTful-CLI</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>WUSTL RESTful CLI Tests</name>
+    <description>Test infrastructure for servers that support IHE and other RESTful interfaces</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>cmoore01</id>
+            <name>Charlie Moore</name>
+            <email>moore.c@wustl.edu</email>
+        </developer>
+        <developer>
+            <id>smoore01</id>
+            <name>Steve Moore</name>
+            <email>moore.stephen.m@wustl.edu</email>
+        </developer>
+    </developers>
+
+
+    <dependencies>
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+        <version>2.4.1</version>
+    </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nrg</groupId>
+            <artifactId>nrg_test</artifactId>
+            <version>1.5-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+<!--        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.codehaus.woodstox</groupId>
+            <artifactId>woodstox-core-asl</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-base</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+      <!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r3 -->
+      <dependency>
+        <groupId>ca.uhn.hapi.fhir</groupId>
+        <artifactId>hapi-fhir-structures-dstu3</artifactId>
+        <version>4.1.0</version>
+      </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4 -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-r4</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+  <dependency>
+    <groupId>org.codehaus.groovy</groupId>
+    <artifactId>groovy</artifactId>
+    <classifier>indy</classifier>
+    <version>2.5.8</version>
+  </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version><!-- 3.6.2 is the minimum -->
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          <compilerId>groovy-eclipse-compiler</compilerId>
+          <compilerArguments>
+            <indy/><!-- optional; supported by batch 2.4.12-04+ -->
+            <configScript>config.groovy</configScript><!-- optional; supported by batch 2.4.13-02+ -->
+          </compilerArguments>
+          <failOnWarning>false</failOnWarning><!-- optional; supported by batch 2.5.8-02+ -->
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-eclipse-compiler</artifactId>
+            <version>3.5.0-01</version>
+          </dependency>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-eclipse-batch</artifactId>
+            <version>2.5.8-02</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <classpathPrefix>lib/</classpathPrefix>
+                <mainClass>edu.wustl.cil.TestingWIA.WIAMain</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+
+  <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <version>1.12</version>
+    <executions>
+      <execution>
+        <id>add-source</id>
+        <phase>generate-sources</phase>
+        <goals>
+          <goal>add-source</goal>
+        </goals>
+        <configuration>
+          <sources>
+            <source>src/main/groovy</source>
+          </sources>
+        </configuration>
+      </execution>
+      <execution>
+        <id>add-test-source</id>
+        <phase>generate-test-sources</phase>
+        <goals>
+          <goal>add-test-source</goal>
+        </goals>
+        <configuration>
+          <sources>
+            <source>src/test/groovy</source>
+          </sources>
+        </configuration>
+      </execution>
+    </executions>
+  </plugin>
+
+
+
+
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>org.nrg.xnat.maven.libraries.release</id>
+            <name>XNAT Maven Release Libraries</name>
+            <url>http://nrgxnat.jfrog.io/nrgxnat/libs-release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>org.nrg.xnat.maven.libraries.snapshot</id>
+            <name>XNAT Maven Snapshot Libraries</name>
+            <url>http://nrgxnat.jfrog.io/nrgxnat/libs-snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>org.nrg.maven.artifacts.remote</id>
+            <name>XNAT Remote Maven Repo</name>
+            <url>http://nrgxnat.jfrog.io/nrgxnat/remote-repos</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>
