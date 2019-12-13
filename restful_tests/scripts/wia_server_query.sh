@@ -54,7 +54,6 @@ BASE_URL=$3
 
 JAR=$BASE_TESTS/lib/WUSTL-RESTful-CLI-1.0-SNAPSHOT.jar
 
-echo	\
 java -jar $JAR		\
 	$BASE_TESTS/wia/testcases-server	\
 	$BASE_TESTS/wia/testcases-server/query.txt	\
