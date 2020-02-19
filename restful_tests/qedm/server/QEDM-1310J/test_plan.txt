@@ -1,0 +1,12 @@
+Title	QEDM-1310J
+Description	Query for all MedicationStatement resources; compare to expected content
+Path	/MedicationStatement
+Query	patient=104
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+
+ResourceContent	medication_statement.txt,entry,$.resource.medicationCodeableConcept.coding[0].code
+
+SpreadsheetOutput	QEDM-1310J.xlsx

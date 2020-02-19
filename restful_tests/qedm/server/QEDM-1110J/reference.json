@@ -1,0 +1,208 @@
+{
+  "resourceType": "Bundle",
+  "id": "4fed95e0-fb83-41d8-9fbd-330466aea688",
+  "meta": {
+    "lastUpdated": "2020-01-05T20:34:30.801-06:00"
+  },
+  "type": "searchset",
+  "total": 3,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://imac:8080/hapi-fhir-jpaserver/fhir/Condition?patient=104"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/Condition/108",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "108",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-05T20:29:47.796-06:00",
+          "source": "#w4Nkqebci78YfiDU"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "255604002",
+              "display": "Mild"
+            }
+          ],
+          "text": "Mild"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "233604007",
+              "display": "Pneumonia"
+            }
+          ],
+          "text": "Pneumonia"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/ct",
+                "code": "181216001",
+                "display": "Entire lung"
+              }
+            ],
+            "text": "Entire lung"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "onsetDateTime": "1998-03-10",
+        "abatementDateTime": "1998-03-16"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/Condition/109",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "109",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-05T20:29:47.832-06:00",
+          "source": "#ii5S4dOP8IvcP3d9"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "255604002",
+              "display": "Mild"
+            }
+          ],
+          "text": "Mild"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "194828000",
+              "display": "Angina"
+            }
+          ],
+          "text": "Angina"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/ct",
+                "code": "80891009",
+                "display": "Heart"
+              }
+            ],
+            "text": "Entire lung"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "onsetDateTime": "2007-04-14"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/Condition/110",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "110",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-05T20:29:47.865-06:00",
+          "source": "#j3HwaLjLJznjfE4Q"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ],
+            "text": "Encounter Diagnosis"
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "255604002",
+              "display": "Mild"
+            }
+          ],
+          "text": "Mild"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "233604007",
+              "display": "Pneumonia"
+            }
+          ],
+          "text": "Pneumonia"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/ct",
+                "code": "181216001",
+                "display": "Entire lung"
+              }
+            ],
+            "text": "Entire lung"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "onsetDateTime": "2013-07-03",
+        "abatementDateTime": "2013-08-04"
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

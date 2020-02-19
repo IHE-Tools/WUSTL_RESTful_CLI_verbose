@@ -1,0 +1,183 @@
+{
+  "resourceType": "Bundle",
+  "id": "5f2e8ba7-8d68-423b-a210-2998d3bf5bdd",
+  "meta": {
+    "lastUpdated": "2020-01-06T15:30:20.465-06:00"
+  },
+  "type": "searchset",
+  "total": 3,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://imac:8080/hapi-fhir-jpaserver/fhir/MedicationStatement?patient=104"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/MedicationStatement/114",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "114",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-06T15:27:07.806-06:00",
+          "source": "#v6PSjFqfDgtHt5St"
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "325456002",
+              "display": "prednisone 20mg"
+            }
+          ],
+          "text": "prednisone 20mg"
+        },
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "dosage": [
+          {
+            "text": "2 tabs once daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": true
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/MedicationStatement/115",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "115",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-06T15:27:07.845-06:00",
+          "source": "#DX95SsfLiTdEC36W"
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "376928006",
+              "display": "Albuterol 90mcg/inh aerosol"
+            }
+          ],
+          "text": "Albuterol 90mcg/inh aerosol"
+        },
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "effectiveDateTime": "2011-01-03",
+        "dateAsserted": "2011-01-03",
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/ct",
+                "code": "195967001",
+                "display": "Asthma"
+              }
+            ],
+            "text": "Asthma"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "2 puffs q6 hours PRN wheezing",
+            "asNeededBoolean": true,
+            "site": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/ct",
+                  "code": "181216001",
+                  "display": "Entire lung"
+                }
+              ]
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/ct",
+                  "code": "447694001",
+                  "display": "Respiratory tract route"
+                }
+              ]
+            },
+            "method": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/ct",
+                  "code": "421134003",
+                  "display": "Inhale"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/MedicationStatement/116",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "116",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-01-06T15:27:07.882-06:00",
+          "source": "#vckZ0pZM2Eqbfw8q"
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "318434003",
+              "display": "Atenolol 25mg tablet"
+            }
+          ],
+          "text": "Atenolol 25mg tablet"
+        },
+        "subject": {
+          "reference": "Patient/104"
+        },
+        "effectiveDateTime": "2012-03-18",
+        "dateAsserted": "2012-03-18",
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/ct",
+                "code": "38341003",
+                "display": "Hypertensive disorder, systemic arterial"
+              }
+            ],
+            "text": "Hypertensive disorder, systemic arterial"
+          }
+        ],
+        "dosage": [
+          {
+            "text": "1 every 12 hours"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

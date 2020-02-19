@@ -1,0 +1,26 @@
+HEADING	TITLE	These values must be equal
+EQUAL	ERROR	Resource Type	$.resource.resourceType
+
+EQUAL	ERROR	Status	$.resource.status
+
+EQUAL	ERROR	Medication Codeable Concept / System	$.resource.medicationCodeableConcept.coding[0].system
+EQUAL	ERROR	Medication Codeable Concept / Code	$.resource.medicationCodeableConcept.coding[0].code
+EQUAL	WARNING	Medication Codeable Concept / Display	$.resource.medicationCodeableConcept.coding[0].display
+
+HEADING	TITLE	Dosage Section; the input data might not be well enough specified
+EQUAL	ERROR	Dosage / text	$.resource.dosage[0].text
+EQUAL	ERROR	Dosage / frequency	$.resource.dosage[0].timing.repeat.frequency
+EQUAL	ERROR	Dosage / period	$.resource.dosage[0].timing.repeat.frequency
+EQUAL	ERROR	Dosage / periodUnit	$.resource.dosage[0].timing.repeat.frequency
+EQUAL	ERROR	Dosage / As Needed	$.resource.dosage[0].asNeededBoolean
+
+HEADING	TITLE	These values cannot be null
+NOTNULL	ERROR	Full URL	$.fullUrl
+NOTNULL	ERROR	Resource ID	$.resource.id
+NOTNULL	ERROR	Version ID	$.resource.meta.versionId
+NOTNULL	ERROR	Last Updated	$.resource.meta.lastUpdated
+
+HEADING	TITLE	These values shall be different
+NOTEQUAL	ERROR	Resource ID	$.resource.id
+NOTEQUAL	ERROR	Last Updated	$.resource.meta.lastUpdated
+NOTEQUAL	ERROR	Patient Reference	$.resource.subject.reference

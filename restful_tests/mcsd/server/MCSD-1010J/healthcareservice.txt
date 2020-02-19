@@ -1,0 +1,19 @@
+HEADING	TITLE	These values must be equal
+EQUAL	ERROR	Resource Type	$.resource.resourceType
+EQUAL	ERROR	Resource Active	$.resource.active
+EQUAL	ERROR	Resource Type / System	$.resource.type[0].coding[0].system
+EQUAL	ERROR	Resource Code / System	$.resource.type[0].coding[0].code
+EQUAL	WARNING	Resource Display / System	$.resource.type[0].coding[0].display
+EQUAL	ERROR	Resource Name	$.resource.name
+
+HEADING	TITLE	These values cannot be null
+NOTNULL	ERROR	Full URL	$.fullUrl
+NOTNULL	ERROR	Resource ID	$.resource.id
+NOTNULL	ERROR	Version ID	$.resource.meta.versionId
+NOTNULL	ERROR	Last Updated	$.resource.meta.lastUpdated
+NOTNULL	ERROR	Identifer System	$.resource.identifier[0].system
+NOTNULL	ERROR	Identifer Value	$.resource.identifier[0].value
+
+HEADING	TITLE	These values shall be different
+NOTEQUAL	ERROR	Resource ID	$.resource.id
+NOTEQUAL	ERROR	Last Updated	$.resource.meta.lastUpdated

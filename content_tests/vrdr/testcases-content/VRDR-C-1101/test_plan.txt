@@ -1,0 +1,7 @@
+Title	VRDR-C-1101
+Description	Cancer subject, test the elements with SHALL requirements
+Reference	../reference/cancer.json
+ResourceContent	../common/fhir_deathreport_shall.txt
+CSVOutput	cancer_shall.csv
+SpreadsheetOutput	cancer_shall.xlsx
+Steps	Spreadsheet

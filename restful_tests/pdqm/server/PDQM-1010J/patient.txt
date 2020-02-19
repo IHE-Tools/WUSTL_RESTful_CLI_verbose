@@ -1,0 +1,22 @@
+EQUAL	ERROR	Resource Type	$.resource.resourceType
+EQUAL	ERROR	Resource Active	$.resource.active
+EQUAL	ERROR	Family Name	$.resource.name[*].family
+EQUAL	ERROR	Family Name	$.resource.name[*].given
+EQUAL	ERROR	Facility ID	$.resource.identifier[?(@.system=="urn:oid:1.3.6.1.4.1.21367.3000.1.6")].value
+EQUAL	ERROR	Blue ID 	$.resource.identifier[?(@.system=="urn:oid:1.3.6.1.4.1.21367.13.20.3000")].value
+EQUAL	ERROR	Green ID	$.resource.identifier[?(@.system=="urn:oid:1.3.6.1.4.1.21367.13.20.2000")].value
+EQUAL	ERROR	Red ID  	$.resource.identifier[?(@.system=="urn:oid:1.3.6.1.4.1.21367.13.20.1000")].value
+EQUAL	ERROR	Gender  	$.resource.gender
+EQUAL	ERROR	Date of Birth	$.resource.birthDate
+EQUAL	ERROR	Home Address / Line	$.resource.address[?(@.use=="home")].line
+EQUAL	ERROR	Home Address / City	$.resource.address[?(@.use=="home")].city
+EQUAL	ERROR	Home Address / State	$.resource.address[?(@.use=="home")].state
+EQUAL	ERROR	Home Address / Postal Code	$.resource.address[?(@.use=="home")].postalCode
+EQUAL	ERROR	Home Address / Country	$.resource.address[?(@.use=="home")].country
+
+
+#
+NOTNULL	ERROR	Full URL	$.fullUrl
+NOTNULL	ERROR	Resource ID	$.resource.id
+NOTNULL	ERROR	Resource versionID	$.resource.meta.versionId
+NOTNULL	ERROR	Resource lastUpdated	$.resource.meta.lastUpdated

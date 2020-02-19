@@ -1,0 +1,13 @@
+Title	MCSD-1010J
+Description	Query for all HealthcareService resources; compare to expected content
+Path	/HealthcareService
+Query	
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+#Elements	elements.txt
+BundleMetadata	bundle_meta.txt
+Responses	200
+ResourceContent	healthcareservice.txt,entry,$.resource.type[0].coding[0].code
+
+SpreadsheetOutput	MCSD-1010J.xlsx

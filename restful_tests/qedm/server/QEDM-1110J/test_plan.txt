@@ -1,0 +1,13 @@
+Title	QEDM-1110J
+Description	Query for all Condition resources; compare to expected content
+Path	/Condition
+Query	patient=4
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+# Two of the condition resources are of the same type; they have different dates
+#ResourceContent	procedure.txt,entry,$.resource.code.coding[0].code
+ResourceContent	condition.txt,entry,$.resource.onsetDateTime
+
+SpreadsheetOutput	QEDM-1110J.xlsx

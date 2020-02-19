@@ -47,8 +47,8 @@ public class WIAMain {
         System.out.println("Arguments: test_folder index_file log_folder qido-rs_url\n" +
                 " e.g.:\n"  +
                 "     /opt/restful_tests/wia/testcases-server\n" +
-                "     /opt/restful_tests/wia/testcases-server/query.txt\n" +
-                "     /opt/restful_logs/wia/server/query/wxy\n" +
+                "     /opt/restful_tests/wia/testcases-server/baseline.txt\n" +
+                "     /opt/restful_logs/wia/server/baseline/wxy\n" +
                 "     http://localhost:8080/qido-wado"
 
         );

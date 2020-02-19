@@ -1,0 +1,7 @@
+Title	VRDR-C-1202
+Description	Opioid subject, test the elements with SHOULD requirements
+Reference	../reference/opioid.json
+ResourceContent	../common/fhir_deathreport_should.txt
+CSVOutput	opioid_should.csv
+SpreadsheetOutput	opioid_should.xlsx
+Steps	Spreadsheet

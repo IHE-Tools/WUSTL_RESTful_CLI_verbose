@@ -1,0 +1,12 @@
+Title	PDQM-1010J
+Description	Query for patient FARNSWORTH by family name
+Path	/Patient
+Query	
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+#ResourceContent	patient.txt,entry,resource/id
+ResourceContent	patient.txt,entry,$.resource.identifier[?(@.system=="urn:oid:1.3.6.1.4.1.21367.3000.1.6")].value
+
+SpreadsheetOutput	PDQM-1010J.xlsx

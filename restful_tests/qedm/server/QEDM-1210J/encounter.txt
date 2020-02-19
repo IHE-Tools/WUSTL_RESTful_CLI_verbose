@@ -1,0 +1,26 @@
+HEADING	TITLE	These values must be equal
+EQUAL	ERROR	Resource Type	$.resource.resourceType
+
+EQUAL	ERROR	Status	$.resource.status
+
+EQUAL	ERROR	Type / System	$.resource.type[0].coding[0].system
+EQUAL	ERROR	Type / Code	$.resource.type[0].coding[0].code
+EQUAL	WARNING	Type / Display	$.resource.type[0].coding[0].display
+
+EQUAL	ERROR	Service Type / System	$.resource.serviceType.coding[0].system
+EQUAL	ERROR	Service Type / Code	$.resource.serviceType.coding[0].code
+EQUAL	WARNING	Service Type / Display	$.resource.serviceType.coding[0].display
+
+EQUAL	ERROR	Period / Start	$.resource.period.start
+EQUAL	ERROR	Period / End	$.resource.period.end
+
+HEADING	TITLE	These values cannot be null
+NOTNULL	ERROR	Full URL	$.fullUrl
+NOTNULL	ERROR	Resource ID	$.resource.id
+NOTNULL	ERROR	Version ID	$.resource.meta.versionId
+NOTNULL	ERROR	Last Updated	$.resource.meta.lastUpdated
+
+HEADING	TITLE	These values shall be different
+NOTEQUAL	ERROR	Resource ID	$.resource.id
+NOTEQUAL	ERROR	Last Updated	$.resource.meta.lastUpdated
+NOTEQUAL	ERROR	Patient Reference	$.resource.subject.reference

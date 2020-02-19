@@ -1,0 +1,13 @@
+Sys	URL
+HAPI FHIR	http://hapi.fhir.org/baseR4
+#OTHER_INTERSYS_HS20 / INTERSYS	http://intersys16/your_url
+#OTHER_INTERSYS_HS20 / INTERSYS	https://intersys16:8080/your_url
+#OTHER_CHI_FHIR / CHI	http://chi0/your_url
+#OTHER_QVERA_QIE_2020 / QVERA	http://qvera13/your_url
+#OTHER_QVERA_QIE_2020 / QVERA	https://qvera13:8080/your_url
+#OTHER_HYLAND_EMI / HYLAND	http://hyland25/your_url
+#OTHER_HYLAND_EMI / HYLAND	https://hyland25:8080/your_url
+#EHR_Epic_Aug19 / Epic	http://epic9/your_url
+#EHR_Epic_Aug19 / Epic	https://epic9:8080/your_url
+#EHR_Tiani - Cisco_2020 / Tiani - Cisco	http://tiani---cisco134/your_url
+#EHR_Tiani - Cisco_2020 / Tiani - Cisco	https://tiani---cisco134:8080/your_url

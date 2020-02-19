@@ -1,0 +1,5 @@
+# Death record 2: Opioid death at home, FHIR Content
+#R	VRDR-C-1200
+R	VRDR-C-1201
+R	VRDR-C-1202
+R	VRDR-C-1203

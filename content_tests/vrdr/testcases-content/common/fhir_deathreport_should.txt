@@ -1,0 +1,40 @@
+HEADING	TITLE	SHOULD Requirements
+
+HEADING	TITLE	Decedent
+# Race
+EQUAL	ERROR	Race: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].valueCode.code
+EQUAL	ERROR	Race: System	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].valueCode.system
+EQUAL	WARNING	Race: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].valueCode.display
+
+# Ethnicity
+EQUAL	ERROR	Race: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.code
+EQUAL	ERROR	Race: System	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.system
+EQUAL	WARNING	Race: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.display
+
+HEADING	TITLE	Decedent: Birth Sex
+EQUAL	ERROR	Birthsex: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex')].valueCode.code
+EQUAL	ERROR	Birthsex: System	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex')].valueCode.system
+EQUAL	WARNING	Birthsex: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex')].valueCode.display
+
+HEADING	TITLE	Decedent: Birth Place
+EQUAL	ERROR	Birth: City	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.city
+EQUAL	ERROR	Birth: State	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.state
+EQUAL	ERROR	Birth: Country	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.country
+
+
+HEADING	TITLE	Decedent: Identifiers
+EQUAL	ERROR	SSN: Value	$.entry[?(@.resource.resourceType=='Patient')]..identifier[?(@.type.coding[0].code=='SB')].value
+EQUAL	ERROR	SSN: System	$.entry[?(@.resource.resourceType=='Patient')]..identifier[?(@.type.coding[0].code=='SB')].system
+
+
+EQUAL	ERROR	Name: Official: Family	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='official')].family
+EQUAL	ERROR	Name: Official: Given	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='official')].given[*]
+
+EQUAL	ERROR	Name: Nickname: Family	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='nickname')].family
+EQUAL	ERROR	Name: Nickname: Given	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='nickname')].given[*]
+
+EQUAL	ERROR	DOB	$.entry[?(@.resource.resourceType=='Patient')].resource.birthDate
+
+
+
+

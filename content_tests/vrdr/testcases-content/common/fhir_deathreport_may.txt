@@ -1,0 +1,11 @@
+HEADING	TITLE	MAY Requirements
+
+EQUAL	ERROR	Residence: City	$.entry[?(@.resource.resourceType=='Patient')].resource.address[0].city
+EQUAL	ERROR	Residence: State	$.entry[?(@.resource.resourceType=='Patient')].resource.address[0].state
+
+
+
+
+
+
+

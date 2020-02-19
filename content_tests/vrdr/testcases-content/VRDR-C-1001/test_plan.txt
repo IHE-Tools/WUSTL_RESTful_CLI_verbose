@@ -1,0 +1,13 @@
+Title	VRDR-C-1001
+Description	Convert an input VRDR / FHIR Death Report to a spreadsheet
+#Path	/HealthcareService
+#Query	
+#Level	Study
+Reference	reference.json
+#ObjectCount	SAME
+#Elements	elements.txt
+#BundleMetadata	bundle_meta.txt
+#Responses	200
+ResourceContent	fhir_deathreport_data.txt
+SpreadsheetOutput	x.csv
+Steps	Linear,Spreadsheet

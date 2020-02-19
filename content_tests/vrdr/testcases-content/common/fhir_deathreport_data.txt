@@ -1,0 +1,164 @@
+HEADING	TITLE	Certificate Identifiers
+#
+HEADING	TITLE	Decedent
+EQUAL	ERROR	Name: Family	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='official')].family
+EQUAL	ERROR	Name: Given	$.entry[?(@.resource.resourceType=='Patient')].resource.name[?(@.use=='official')].given[*]
+
+# Race
+EQUAL	ERROR	Race: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].extension[0].valueCoding.code
+EQUAL	ERROR	Race: System	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].extension[0].valueCoding.system
+EQUAL	WARNING	Race: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')].extension[0].valueCoding.display
+
+# Ethnicity
+EQUAL	ERROR	Race: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.code
+EQUAL	ERROR	Race: System	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.system
+EQUAL	WARNING	Race: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity')].extension[0].valueCoding.display
+
+
+
+
+EQUAL	ERROR	Gender	$.entry[?(@.resource.resourceType=='Patient')].resource.gender
+EQUAL	ERROR	SSN	$.entry[?(@.resource.resourceType=='Patient')].resource.identifier[?(@.system=='http://hl7.org/fhir/sid/us-ssn')].value
+
+EQUAL	ERROR	Age at death: Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Age')]..status
+EQUAL	ERROR	Age at death: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Age')][?(@.code.coding[0].system=='http://loinc.org')].code.coding[0].code
+EQUAL	ERROR	Age at death: Value	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Age')]..valueQuantity.value
+EQUAL	ERROR	Age at death: Unit	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Age')]..valueQuantity.unit
+
+EQUAL	ERROR	DOB	$.entry[?(@.resource.resourceType=='Patient')].resource.birthDate
+
+EQUAL	ERROR	Birth: City	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.city
+EQUAL	ERROR	Birth: State	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.state
+EQUAL	ERROR	Birth: Country	$.entry[?(@.resource.resourceType=='Patient')].resource.extension[?(@.url=='http://hl7.org/fhir/StructureDefinition/birthPlace')].valueAddress.country
+
+EQUAL	ERROR	Birth Certificate Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Birth-Record-Identifier')]..status
+EQUAL	ERROR	Birth Certificate Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Birth-Record-Identifier')]..code.coding[0].code
+EQUAL	ERROR	Birth Certificate #	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Birth-Record-Identifier')]..valueString
+
+EQUAL	ERROR	Father: Relationship Coding	$.entry[?(@.resource.resourceType=='RelatedPerson')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Father')]..relationship.coding[0].code
+EQUAL	ERROR	Father: Family Name	$.entry[?(@.resource.resourceType=='RelatedPerson')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Father')]..name[*].family
+
+EQUAL	ERROR	Marital Status: Code	$.entry[?(@.resource.resourceType=='Patient')].resource.maritalStatus.coding[*].code
+EQUAL	ERROR	Marital Status: Display	$.entry[?(@.resource.resourceType=='Patient')].resource.maritalStatus.coding[*].display
+EQUAL	ERROR	Marital Status: System	$.entry[?(@.resource.resourceType=='Patient')].resource.maritalStatus.coding[*].system
+
+EQUAL	ERROR	Residence: City	$.entry[?(@.resource.resourceType=='Patient')].resource.address[*].city
+EQUAL	ERROR	Residence: County	$.entry[?(@.resource.resourceType=='Patient')].resource.address[*].district
+EQUAL	ERROR	Residence: State	$.entry[?(@.resource.resourceType=='Patient')].resource.address[*].state
+
+EQUAL	ERROR	Education Level: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Education-Level')].code.coding[*].system
+EQUAL	ERROR	Education Level: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Education-Level')].code.coding[*].code
+EQUAL	ERROR	Education Level: Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Education-Level')].valueCodeableConcept.coding[*].system
+EQUAL	ERROR	Education Level: Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Education-Level')].valueCodeableConcept.coding[*].code
+EQUAL	WARNING	Education Level: Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Education-Level')].valueCodeableConcept.coding[*].display
+
+
+EQUAL	ERROR	Occupation: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].code.coding[0].system
+EQUAL	ERROR	Occupation: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].code.coding[0].code
+
+EQUAL	ERROR	Occupation: Component Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21843-8')].code.coding[0].code
+EQUAL	ERROR	Occupation: Component Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21843-8')].code.coding[0].system
+EQUAL	ERROR	Occupation: Actual Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21843-8')].valueCodeableConcept.coding[0].system
+EQUAL	ERROR	Occupation: Actual Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21843-8')].valueCodeableConcept.coding[0].code
+EQUAL	WARNING	Occupation: Actual Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21843-8')].valueCodeableConcept.coding[0].display
+
+EQUAL	ERROR	Industry: Component Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21844-6')].code.coding[0].code
+EQUAL	ERROR	Industry: Component Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21844-6')].code.coding[0].system
+EQUAL	ERROR	Industry: Actual Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21844-6')].valueCodeableConcept.coding[0].system
+EQUAL	ERROR	Industry: Actual Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21844-6')].valueCodeableConcept.coding[0].code
+EQUAL	WARNING	Industry: Actual Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Decedent-Employment-History')].component[?(@.code.coding[0].code=='21844-6')].valueCodeableConcept.coding[0].display
+
+HEADING	TITLE	Death Details
+
+EQUAL	ERROR	Death Date: Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')].status
+EQUAL	ERROR	Death Date: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')][?(@.code.coding[0].system=='http://loinc.org')].code.coding[0].code
+EQUAL	ERROR	Death Date: Component Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')][?(@.code.coding[0].system=='http://loinc.org')].component[0].code.coding[0].system
+EQUAL	ERROR	Death Date: Component Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')][?(@.code.coding[0].system=='http://loinc.org')].component[0].code.coding[0].code
+EQUAL	WARNING	Death Date: Component Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')][?(@.code.coding[0].system=='http://loinc.org')].component[0].code.coding[0].display
+EQUAL	WARNING	Death Date: Date/Time	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Date')][?(@.code.coding[0].system=='http://loinc.org')].component[0].valueDateTime
+
+EQUAL	ERROR	Death Location: Name	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].name
+NOTNULL	ERROR	Death Location: City	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].address.city
+NOTNULL	ERROR	Death Location: District	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].address.district
+NOTNULL	ERROR	Death Location: State	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].address.state
+
+NOTNULL	ERROR	Death Location: Description	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].description
+NOTNULL	ERROR	Death Location: Type: Code	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].type.coding[0].code
+NOTNULL	ERROR	Death Location: Type: System	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].type.coding[0].system
+NOTNULL	ERROR	Death Location: Type: Display	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].type.coding[0].display
+
+NOTNULL	ERROR	Death Location: Physical Type: Code	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].physicalType.coding[0].code
+NOTNULL	ERROR	Death Location: Physical Type: System	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].physicalType.coding[0].system
+NOTNULL	ERROR	Death Location: Physical Type: Display	$.entry[?(@.resource.resourceType=='Location')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Death-Location')].physicalType.coding[0].display
+
+
+EQUAL	ERROR	Certifier: Qualification: Code	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].qualification[0].code.coding[0].code
+EQUAL	ERROR	Certifier: Qualification: System	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].qualification[0].code.coding[0].system
+EQUAL	WARNING	Certifier: Qualification: Display	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].qualification[0].code.coding[0].display
+
+EQUAL	ERROR	Certifier: Name: Family	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].name[?(@.use=='official')].family
+EQUAL	ERROR	Certifier: Name: Given	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].name[?(@.use=='official')].given[0]
+EQUAL	ERROR	Certifier: Address: Line 0	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].address[0].line[0]
+EQUAL	ERROR	Certifier: Address: City	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].address[0].city
+EQUAL	ERROR	Certifier: Address: State	$.entry[?(@.resource.resourceType=='Practitioner')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Certifier')].address[0].state
+
+EQUAL	ERROR	Cause of death: code.text	$.entry[?(@.resource.resourceType=='Condition')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Cause-Of-Death-Condition')].code.text
+EQUAL	ERROR	Cause of death: onsetString	$.entry[?(@.resource.resourceType=='Condition')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Cause-Of-Death-Condition')].onsetString
+
+EQUAL	ERROR	Examiner Contacted: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Examiner-Contacted')].status
+EQUAL	ERROR	Examiner Contacted: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Examiner-Contacted')].code.coding[0].code
+EQUAL	ERROR	Examiner Contacted: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Examiner-Contacted')].code.coding[0].system
+EQUAL	ERROR	Examiner Contacted: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Examiner-Contacted')].code.coding[0].display
+EQUAL	ERROR	Examiner Contacted: True/False	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Examiner-Contacted')].valueBoolean
+
+EQUAL	ERROR	Manner of Death: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].status
+EQUAL	ERROR	Manner of Death: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].code.coding[0].code
+EQUAL	ERROR	Manner of Death: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].code.coding[0].system
+EQUAL	ERROR	Manner of Death: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].code.coding[0].display
+EQUAL	ERROR	Manner of Death: Value Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].valueCodeableConcept.coding[0].code
+EQUAL	ERROR	Manner of Death: Value Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].valueCodeableConcept.coding[0].system
+EQUAL	ERROR	Manner of Death: Value Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.meta.profile[0]=='http://hl7.org/fhir/us/vrdr/StructureDefinition/VRDR-Manner-of-Death')].valueCodeableConcept.coding[0].display
+
+EQUAL	ERROR	Autopsy Performed: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].status
+EQUAL	ERROR	Autopsy Performed: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].code.coding[0].code
+EQUAL	ERROR	Autopsy Performed: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].code.coding[0].system
+EQUAL	WARNING	Autopsy Performed: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].code.coding[0].display
+
+EQUAL	ERROR	Autopsy Performed: Value Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].valueCodeableConcept.coding[0].code
+EQUAL	ERROR	Autopsy Performed: Value Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].valueCodeableConcept.coding[0].system
+EQUAL	WARNING	Autopsy Performed: Value Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='85699-7')].valueCodeableConcept.coding[0].display
+
+
+
+EQUAL	ERROR	Disposition Method: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].status
+EQUAL	ERROR	Disposition Method: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].code.coding[0].system
+EQUAL	ERROR	Disposition Method: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].code.coding[0].code
+EQUAL	WARNING	Disposition Method: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].code.coding[0].display
+
+EQUAL	ERROR	Disposition Method: Value Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].valueCodeableConcept.coding[0].code
+EQUAL	ERROR	Disposition Method: Value Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].valueCodeableConcept.coding[0].system
+EQUAL	WARNING	Disposition Method: Value Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='80905-3')].valueCodeableConcept.coding[0].display
+
+# Pregnancy
+EQUAL	ERROR	Pregnancy: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].status
+EQUAL	ERROR	Pregnancy: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].code.coding[0].system
+EQUAL	ERROR	Pregnancy: Observation Code. 	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].code.coding[0].code
+EQUAL	WARNING	Pregnancy: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].code.coding[0].display
+
+EQUAL	ERROR	Pregnancy: Value Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].valueCodeableConcept.coding[0].system
+EQUAL	ERROR	Pregnancy: Value Code.       	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].valueCodeableConcept.coding[0].code
+EQUAL	WARNING	Pregnancy: Value Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69442-2')].valueCodeableConcept.coding[0].display
+
+# Tobacco Use
+EQUAL	ERROR	Tobacco Use: Observation Status	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].status
+EQUAL	ERROR	Tobacco Use: Observation Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].code.coding[0].system
+EQUAL	ERROR	Tobacco Use: Observation Code	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].code.coding[0].code
+EQUAL	WARNING	Tobacco Use: Observation Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].code.coding[0].display
+
+EQUAL	ERROR	Tobacco Use: Value Coding System	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].valueCodeableConcept.coding[0].system
+EQUAL	ERROR	Tobacco Use: Value Code.     	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].valueCodeableConcept.coding[0].code
+EQUAL	WARNING	Tobacco Use: Value Code Display	$.entry[?(@.resource.resourceType=='Observation')].resource..[?(@.code.coding[0].code=='69443-0')].valueCodeableConcept.coding[0].display
+
+
+
+

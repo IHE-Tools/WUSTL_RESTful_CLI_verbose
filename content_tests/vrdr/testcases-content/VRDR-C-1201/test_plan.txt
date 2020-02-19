@@ -1,0 +1,7 @@
+Title	VRDR-C-1201
+Description	Opioid subject, test the elements with SHALL requirements
+Reference	../reference/opioid.json
+ResourceContent	../common/fhir_deathreport_shall.txt
+CSVOutput	opioid_shall.csv
+SpreadsheetOutput	opioid_shall.xlsx
+Steps	Spreadsheet

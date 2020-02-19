@@ -1,0 +1,5 @@
+# Death record 1, Cancer Patient: FHIR Content
+#R	VRDR-C-1100
+R	VRDR-C-1101
+R	VRDR-C-1102
+R	VRDR-C-1103

@@ -9,12 +9,13 @@ if [ -e /tmp/WUSTL ]; then rm -r /tmp/WUSTL; fi
 mkdir /tmp/WUSTL
 
 cp -rp restful_tests /tmp/WUSTL
-mkdir /tmp/WUSTL/restful_tests/lib
+cp -rp content_tests /tmp/WUSTL
+mkdir /tmp/WUSTL/lib
 
 cp  target/WUSTL-RESTful-CLI-1.0-SNAPSHOT-jar-with-dependencies.jar	\
-	/tmp/WUSTL/restful_tests/lib/WUSTL-RESTful-CLI-1.0-SNAPSHOT.jar
+	/tmp/WUSTL/lib/WUSTL-RESTful-CLI-1.0-SNAPSHOT.jar
 
-pushd /tmp/WUSTL/restful_tests
+pushd /tmp/WUSTL
 zip -rq ../WUSTL_RESTful_CLI-$VERSION.zip .
-cd ..; rm -r restful_tests
+cd ..; ls
 popd

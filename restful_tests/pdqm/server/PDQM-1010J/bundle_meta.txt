@@ -1,0 +1,5 @@
+EQUAL	ERROR	resourceType	resourceType
+EQUAL	ERROR	type	type
+
+NOTEQUAL	ERROR	Resource ID	id
+NOTEQUAL	ERROR	Last Updated	meta/lastUpdated

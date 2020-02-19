@@ -1,0 +1,36 @@
+HEADING	TITLE	These values must be equal
+EQUAL	ERROR	Resource Type	$.resource.resourceType
+EQUAL	ERROR	Resource Status	$.resource.status
+
+EQUAL	ERROR	Resource Category / System	$.resource.category.coding[0].system
+EQUAL	ERROR	Resource Category / Code	$.resource.category.coding[0].code
+EQUAL	WARNING	Resource Category / Display	$.resource.category.coding[0].display
+
+EQUAL	ERROR	(Procedure) Code / System	$.resource.code.coding[0].system
+EQUAL	ERROR	(Procedure) Code / Code	$.resource.code.coding[0].code
+EQUAL	WARNING	(Procedure) Code / Display	$.resource.code.coding[0].display
+
+EQUAL	WARNING	Performed Date Time	$.resource.performedDateTime
+
+EQUAL	ERROR	Reason Code / System	$.resource.bodySite[0].coding[0].system
+EQUAL	ERROR	Reason Code / Code	$.resource.bodySite[0].coding[0].code
+EQUAL	WARNING	Reason Code / Display	$.resource.bodySite[0].coding[0].display
+
+EQUAL	ERROR	Body Site / System	$.resource.reasonCode[0].coding[0].system
+EQUAL	ERROR	Body Site / Code	$.resource.reasonCode[0].coding[0].code
+EQUAL	WARNING	Body Site / Display	$.resource.reasonCode[0].coding[0].display
+
+EQUAL	ERROR	Outcome / System	$.resource.outcome.coding[0].system
+EQUAL	ERROR	Outcome / Code  	$.resource.outcome.coding[0].code
+EQUAL	WARNING	Outcome / Display	$.resource.outcome.coding[0].display
+
+HEADING	TITLE	These values cannot be null
+NOTNULL	ERROR	Full URL	$.fullUrl
+NOTNULL	ERROR	Resource ID	$.resource.id
+NOTNULL	ERROR	Version ID	$.resource.meta.versionId
+NOTNULL	ERROR	Last Updated	$.resource.meta.lastUpdated
+
+HEADING	TITLE	These values shall be different
+NOTEQUAL	ERROR	Resource ID	$.resource.id
+NOTEQUAL	ERROR	Last Updated	$.resource.meta.lastUpdated
+NOTEQUAL	ERROR	Patient Reference	$.resource.subject.reference

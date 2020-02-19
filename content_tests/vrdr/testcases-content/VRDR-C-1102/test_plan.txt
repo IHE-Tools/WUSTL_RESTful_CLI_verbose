@@ -1,0 +1,7 @@
+Title	VRDR-C-1102
+Description	Cancer subject, test the elements with SHOULD requirements
+Reference	../reference/cancer.json
+ResourceContent	../common/fhir_deathreport_should.txt
+CSVOutput	cancer_should.csv
+SpreadsheetOutput	cancer_should.xlsx
+Steps	Spreadsheet

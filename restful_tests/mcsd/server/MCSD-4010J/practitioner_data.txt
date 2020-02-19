@@ -1,0 +1,37 @@
+EQUAL	ERROR	resource/resourceType
+
+EQUAL	ERROR	resource/name/use
+EQUAL	ERROR	resource/name/text
+EQUAL	ERROR	resource/name/family
+
+EQUAL	ERROR	resource/telecom/system
+EQUAL	ERROR	resource/telecom/value
+EQUAL	ERROR	resource/telecom/use
+
+EQUAL	ERROR	resource/address/use
+EQUAL	ERROR	resource/address/line
+EQUAL	ERROR	resource/address/city
+EQUAL	ERROR	resource/address/state
+EQUAL	ERROR	resource/address/postalCode
+EQUAL	ERROR	resource/address/country
+
+EQUAL	ERROR	resource/gender
+EQUAL	ERROR	resource/birthDate
+EQUAL	ERROR	resource/qualification/identifier/use
+EQUAL	ERROR	resource/qualification/identifier/system
+EQUAL	ERROR	resource/qualification/identifier/value
+
+EQUAL	ERROR	resource/communication/coding/system
+EQUAL	ERROR	resource/communication/coding/code
+EQUAL	ERROR	resource/communication/coding/display
+
+
+NOTNULL	ERROR	fullUrl
+NOTNULL	ERROR	resource/id
+NOTNULL	ERROR	resource/meta/versionId
+NOTNULL	ERROR	resource/meta/lastUpdated
+NOTNULL	ERROR	resource/identifier/system
+NOTNULL	ERROR	resource/identifier/value
+
+#NOTEQUAL	ERROR	id
+#NOTEQUAL	ERROR	meta/lastUpdated

@@ -1,0 +1,9 @@
+Title	MCSD-2010J
+Description	Query for all Location resources; compare to expected content
+Path	/Location
+Query	
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+ResourceContent	location_data.txt,entry,resource/name

@@ -1,0 +1,10 @@
+Title	MCSD-5010J
+Description	Query for all PractionerRole resources; compare to expected content
+Path	/PractitionerRole
+Query	
+Level	Study
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+ResourceContent	practitionerrole_data.txt,entry,resource/practitioner/identifier/value:resource/organization/identifier/value

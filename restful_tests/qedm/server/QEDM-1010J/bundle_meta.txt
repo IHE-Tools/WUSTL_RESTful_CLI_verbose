@@ -1,0 +1,5 @@
+EQUAL	ERROR	Bundle Resource Type	resourceType
+EQUAL	ERROR	Bundle Type	type
+
+NOTEQUAL	ERROR	Bundle ID	id
+NOTEQUAL	ERROR	Bundle Last Updated	meta/lastUpdated

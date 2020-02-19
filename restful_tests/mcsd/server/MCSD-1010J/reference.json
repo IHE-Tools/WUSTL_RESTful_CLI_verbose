@@ -1,0 +1,570 @@
+{
+  "resourceType": "Bundle",
+  "id": "bd6b925b-2e99-4949-bf16-a8374e6333b5",
+  "meta": {
+    "lastUpdated": "2019-12-18T10:10:23.690-06:00"
+  },
+  "type": "searchset",
+  "total": 13,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/1",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:23.925-06:00",
+          "source": "#BGwvDHe4nzRUVP5t",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:8f246dd6-b301-4fbb-b43b-f2f40b3e61d0"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-001",
+                "display": "Hospital - Outpatient"
+              }
+            ]
+          }
+        ],
+        "name": "Hospital - Outpatient"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/2",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.236-06:00",
+          "source": "#OPGAa8AwIn1zUxmZ",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:3c43ed80-b323-4f31-b450-57ce5923fc85"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-002",
+                "display": "Radiation Therapy"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:e9964293-e169-4298-b4d0-ab07bf0cd78f"
+            }
+          }
+        ],
+        "name": "Radiation Therapy"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/3",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "3",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.279-06:00",
+          "source": "#mFyRKhg23NqOfvPX",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:f412889b-0364-4ebe-91b8-f26481a9a8f1"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-003",
+                "display": "Dialysis"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:a3eb03db-0094-4059-9156-8de081cb5885"
+            }
+          },
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:be4d27c3-21b8-481f-9fed-6524a8eb9bac"
+            }
+          }
+        ],
+        "name": "Dialysis"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/4",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "4",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.321-06:00",
+          "source": "#3itvI4c5DdR80Sj6",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:9f45a9bd-f360-4f5a-9f39-a04f19720424"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-004",
+                "display": "Routine Exam"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:e9964293-e169-4298-b4d0-ab07bf0cd78f"
+            }
+          },
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:a3eb03db-0094-4059-9156-8de081cb5885"
+            }
+          }
+        ],
+        "name": "Routine Exam"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/5",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "5",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.360-06:00",
+          "source": "#6pb39Ph7jvTd8Jkd",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:e1c7931b-e733-440b-9ae0-7fe5fc7342a5"
+          }
+        ],
+        "active": false,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-005",
+                "display": "Well Baby Care"
+              }
+            ]
+          }
+        ],
+        "name": "Well Baby Care"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/6",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "6",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.394-06:00",
+          "source": "#jGb4jMjrQamg9VnB",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:8b1de1ad-131b-4e63-916a-a05adcd0de52"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-006",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "name": "Laboratory"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/7",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "7",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.430-06:00",
+          "source": "#b7wFI1nq5U5ecsFp",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:72ae70cb-118c-4873-b196-ca871caf3b44"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-007",
+                "display": "Occupational Therapy"
+              }
+            ]
+          }
+        ],
+        "name": "Occupational Therapy"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/8",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "8",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.465-06:00",
+          "source": "#wbv0APZwCbRViJdb",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:4e03f79b-8bf5-46cf-bc16-9ab57f357872"
+          }
+        ],
+        "active": false,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-008",
+                "display": "Generic Prescription Drug - Formulary"
+              }
+            ]
+          }
+        ],
+        "name": "Generic Prescription Drug - Formulary"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/9",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "9",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.504-06:00",
+          "source": "#2qSEBnuxU3TDrYT0",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:e8050261-bf0d-4d0d-8b4e-83f5c05561b2"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-009",
+                "display": "Massage Therapy"
+              }
+            ]
+          }
+        ],
+        "name": "Massage Therapy"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/10",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "10",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.538-06:00",
+          "source": "#TQxv1c8QvZLf4m4J",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:97f25cbb-d1dd-4849-b369-f8d7c35f7775"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-010",
+                "display": "Screening X-Ray"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:e9964293-e169-4298-b4d0-ab07bf0cd78f"
+            }
+          }
+        ],
+        "name": "Screening X-Ray"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/11",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "11",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.584-06:00",
+          "source": "#ILZSXWLUa46vj4Ut",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:0d8bd79c-2465-43f3-b34c-233c26fc2d8e"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-011",
+                "display": "Vision - Frames"
+              }
+            ]
+          }
+        ],
+        "name": "Vision - Frames"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/12",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "12",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.623-06:00",
+          "source": "#K53FXu55CBMHSR5R",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:73896e32-08a8-48c5-9ede-fc991eebb122"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-012",
+                "display": "Gynecological"
+              }
+            ]
+          }
+        ],
+        "name": "Gynecological"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://imac:8080/hapi-fhir-jpaserver/fhir/HealthcareService/13",
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "13",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2019-12-17T12:42:24.660-06:00",
+          "source": "#XrWfQBnyO0SYCiNG",
+          "profile": [
+            "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_HealthcareService"
+          ]
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://connectathon.ihe",
+            "value": "urn:uuid:def4c912-46ae-4e23-a78c-80ea597a82ee"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://gazelle.ihe.net/SVSSimulator/rest/RetrieveValueSetForSimulator?id=1.3.6.1.4.1.21367.200.102",
+                "code": "101-013",
+                "display": "Screening Mammography"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "identifier": {
+              "use": "official",
+              "system": "http://connectathon.ihe",
+              "value": "urn:uuid:e9964293-e169-4298-b4d0-ab07bf0cd78f"
+            }
+          }
+        ],
+        "name": "Screening Mammography"
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

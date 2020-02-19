@@ -1,0 +1,12 @@
+Title	QEDM-1010J
+Description	Query for all procedure resources; compare to expected content
+Path	/Procedure
+Query	patient=104
+Reference	reference.json
+ObjectCount	SAME
+BundleMetadata	bundle_meta.txt
+Responses	200
+#ResourceContent	procedure.txt,entry,$.resource.category.coding[0].code
+ResourceContent	procedure.txt,entry,$.resource.code.coding[0].code
+
+SpreadsheetOutput	QEDM-1010J.xlsx

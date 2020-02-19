@@ -1,0 +1,7 @@
+Title	VRDR-C-1100
+Description	Convert an input VRDR / FHIR Death Report to a spreadsheet
+Reference	cancer.json
+ResourceContent	fhir_deathreport_data.txt
+CSVOutput	x.csv
+SpreadsheetOutput	x.xlsx
+Steps	Spreadsheet

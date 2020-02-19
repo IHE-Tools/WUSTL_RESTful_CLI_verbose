@@ -1,0 +1,14 @@
+#HealthcareService
+R	MCSD-1010J
+
+#Location
+#R	MCSD-2010J
+
+#Organization
+#R	MCSD-3010J
+
+#Practitioner
+#R	MCSD-4010J
+
+#PractitionerRole
+#R	MCSD-5010J
