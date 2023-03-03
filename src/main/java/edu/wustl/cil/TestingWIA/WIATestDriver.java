@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import org.nrg.xnat.dicom.model.DicomObject;
-import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
+//import org.nrg.xnat.dicom.model.DicomObject;
+//import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
 
 //import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -95,7 +95,11 @@ public class WIATestDriver {
         try {
             response = given().baseUri(endpoint).basePath(testInstance.getPath()).params(testInstance.getQuery()).header(header).get();
             testResponseCode(writer, response, testInstance);
-            testJSONResponse(writer, response, testInstance);
+        } catch (Exception e) {
+            throw e;
+        }
+//            testJSONResponse(writer, response, testInstance);     FIX
+/*
         } catch (java.net.ConnectException e) {
 
             writer.println("ConnectionException for endpoint: " + endpoint);
@@ -105,6 +109,9 @@ public class WIATestDriver {
 //            writer.println("ConnectionException for endpoint: " + endpoint);
 //            e.printStackTrace(writer);
         }
+
+ */
+
 
         logTestMetrics(writer, testInstance);
         logTestCompletion(writer);
@@ -125,7 +132,7 @@ public class WIATestDriver {
             testInstance.addError("Returned response code (" + returnedResponseCode + ") is not in the set of allowed response codes (" + testInstance.getResponses() + ")" );
         }
     }
-
+/*
     private void testJSONResponse(PrintWriter writer, Response response, TestInstance testInstance) throws Exception {
         objectMapper.registerModule(JsonDicomWebDeserializationModule.build());
 
@@ -152,7 +159,7 @@ public class WIATestDriver {
             DicomContentTester.testStudyArrayContent(writer, testInstance, referenceMap, underTestMap, testItems, objectCount);
         }
     }
-
+ */
     private List<String> readTestCases() throws Exception {
         List<String> tmp;
         List<String> result = new ArrayList<>();

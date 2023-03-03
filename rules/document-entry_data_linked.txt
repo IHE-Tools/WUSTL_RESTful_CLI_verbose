@@ -1,0 +1,5 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	xsl	referenceValue	docReference	comments
+R	ERROR	0	EQ	mimeType	./@mimeType	NA	X	NA
+R	ERROR	1	EQ	PID-5	./Slot[@name='sourcePatientInfo']/ValueList/Value	PID-5	NA	NA
+R	ERROR	1	EQ	PID-7	./Slot[@name='sourcePatientInfo']/ValueList/Value	PID-7	NA	NA
+R	ERROR	1	EQ	PID-8	./Slot[@name='sourcePatientInfo']/ValueList/Value	PID-8	NA	NA

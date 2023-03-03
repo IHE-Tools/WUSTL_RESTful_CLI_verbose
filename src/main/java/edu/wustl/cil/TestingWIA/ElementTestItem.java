@@ -1,6 +1,6 @@
 package edu.wustl.cil.TestingWIA;
 
-import org.nrg.xnat.dicom.model.DicomAttribute;
+//import org.nrg.xnat.dicom.model.DicomAttribute;
 
 import java.io.PrintWriter;
 
@@ -67,7 +67,7 @@ public class ElementTestItem {
                 break;
         }
     }
-
+/*
     public void testAttribute(PrintWriter writer, TestInstance testInstance, DicomAttribute reference, DicomAttribute underTest) {
         switch (testOperator) {
             case "EQUAL":
@@ -118,6 +118,7 @@ public class ElementTestItem {
                 break;
         }
     }
+*/
     // Getters / setters below here
 
     public String[] getElementTags() {

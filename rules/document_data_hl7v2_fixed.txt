@@ -1,0 +1,25 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	xsl	referenceValue	doc Reference	comments
+R	ERROR	0	EQ	MSH.9	MSH/field[7]	OMGO19 OMG_O19	PCC 360X 3:3.55.4.1.2.2	Message Type; reference value is a little weird because of the way the DCM4CHE software creates XML
+R	ERROR	0	EQ	MSH.9	MSH/field[7]/component[1]	O19	PCC 360X 3:3.55.4.1.2.2	Message Type
+R	ERROR	0	EQ	MSH.9	MSH/field[7]/component[2]	OMG_O19	PCC 360X 3:3.55.4.1.2.2	Message Type
+R	ERROR	0	EQ	ORC-1	ORC/field[1]	NW	PCC 360X 3:3.55.4.1.2.2	Order Control Code
+R	ERROR	0	NOTNULL	ORC-2	ORC/field[2]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID <referral ID>^^<assigning authority OID>^ISO
+R	ERROR	0	NULL	ORC-2	ORC/field[2]/component[1]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID; second component is null
+R	ERROR	0	NOTNULL	ORC-2	ORC/field[2]/component[2]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID; assigning authority OID
+R	ERROR	0	EQ	ORC-2	ORC/field[2]/component[3]	ISO	PCC 360X 3:3.55.4.1.2.2	Referral ID; fixed value ISO
+R	ERROR	0	NOTNULL	OBR-2	OBR/field[2]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID <referral ID>^^<assigning authority OID>^ISO
+R	ERROR	0	NULL	OBR-2	OBR/field[2]/component[1]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID; second component is null
+R	ERROR	0	NOTNULL	OBR-2	OBR/field[2]/component[2]	NA	PCC 360X 3:3.55.4.1.2.2	Referral ID; assigning authority OID
+R	ERROR	0	EQ	OBR-2	OBR/field[2]/component[3]	ISO	PCC 360X 3:3.55.4.1.2.2	Referral ID; fixed value ISO
+R	ERROR	0	NOTNULL	ORC-12	ORC/field[12]	NA	PCC 360X 3:3.55.4.1.2.2	Ordering provider. The referring provider. Providers should be identified using their NPI. Matches the Submission Set author in the metadata of the referral request.
+R	ERROR	0	NOTNULL	OBR-16	OBR/field[16]	NA	PCC 360X 3:3.55.4.1.2.2	Ordering provider. The referring provider. Providers should be identified using their NPI. Matches the Submission Set author in the metadata of the referral request.
+O	WARNING	0	NOTNULL	TQ1-6	TQ1/field[6]	NA	PCC 360X 3:3.55.4.1.2.2	Service Duration. The length of time for which a referral is valid. Note that the presence of a validity time period should not affect the timeliness of the accept or decline response.
+R2	WARNING	0	NOTNULL	TQ1-8	TQ1/field[8]	NA	PCC 360X 3:3.55.4.1.2.2	"Expected service provision time. When a referral request has an associated urgency, this date/time field shall reflect the date or time by which the referral shall be performed. Concepts like 'Urgent', 'ASAP', etc. have different meaning for different settings or specialties; therefore the Referral Initiators system shall convert such concepts to a date (and optionally a time) by which the requested service is expected to be performed, or in the cases of referrals where multiple visits may be required, the first visit is completed."
+O	WARNING	0	NOTNULL	TQ1-14	TQ1/field[14]	NA	PCC 360X 3:3.55.4.1.2.2	Total occurrences. Optional information on the number of service units ordered as part of this referral.
+R	ERROR	0	NOTNULL	OBR-4	OBR/field[4]	NA	PCC 360X 3:3.55.4.1.2.2	"Service Identifier. The default value is the 57133-1 LOINC code, referral note. It may contain any other entry from the ReferralDocumentType Value set as defined in Table 54 of the C-CDA implementation guide. This should generally match the /ClinicalDocument/code of the CDA document type."
+R	WARNING	0	EQ	OBR-4	OBR/field[4]	57133-1	PCC 360X 3:3.55.4.1.2.2	"Service Identifier. The default value is the 57133-1 LOINC code, referral note. It may contain any other entry from the ReferralDocumentType Value set as defined in Table 54 of the C-CDA implementation guide. This should generally match the /ClinicalDocument/code of the CDA document type."
+R	ERROR	0	NOTNULL	OBR-31	OBR/field[31]	NA	PCC 360X 3:3.55.4.1.2.2	"Reason for Referral. This field is used to convey the reason(s) for the referral. This corresponds to the Reason for Referral section in the CDA payload (for the C-CDA Option, template id urn:hl7ii:1.3.6.1.4.1.19376.1.5.3.1.3.1:2014-06-09). Multiple reasons for referral shall be conveyed as repetitions in this field. If the primary reason is coded, SNOMED CT [Problem Value Set urn:oid:2.16.840.1.113883.3.88.12.3221.7.4 ] is the preferred value set to use, If the primary reason is free text then use only OBR-31.2"
+O	WARNING	0	NOTNULL	OBX-3	OBX/field[3]	NA	PCC 360X 3:3.55.4.1.2.2	Referral question indicator. A LOINC code (TBD?) to identify the OBX value as a referral question
+O	WARNING	0	NOTNULL	OBX-5	OBX/field[5]	NA	PCC 360X 3:3.55.4.1.2.2	"Referral question indicator. A referral question may be necessary to further qualify the reason(s) for referral. If there is such a question, the OBX segment shall be present to convey it."
+O	WARNING	0	EQ	OBX-11	OBX/field[11]	O	PCC 360X 3:3.55.4.1.2.2	Indicator for question regarding the order. Fixed to 'O'.
+O	WARNING	0	EQ	OBX-29	OBX/field[29]	QST	PCC 360X 3:3.55.4.1.2.2	Indiation that this is a question from placer to filler. Fixed to 'QST'

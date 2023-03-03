@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,10 +14,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class CommonSupport {
 
-    private CellStyle greenCellStyle = null;
-    private CellStyle yellowCellStyle = null;
-    private CellStyle orangeCellStyle  = null;
-    private CellStyle redCellStyle  = null;
+    //private HashMap<String, CellStyle> cellStyleHashMap = null;
+
+    //private CellStyle greenCellStyle = null;
+    //private CellStyle yellowCellStyle = null;
+    //private CellStyle orangeCellStyle  = null;
+    //private CellStyle redCellStyle  = null;
 
     static public PrintWriter getPrintWriter(String path) throws Exception {
         File f = new File(path);
@@ -27,7 +30,7 @@ public class CommonSupport {
     public void writeSpreadsheet(String path, List<CommonNameValueTestItem> testItems) throws Exception {
         Workbook w = new XSSFWorkbook();
         Sheet sheet = w.createSheet();
-        createAllCellStyles(w);
+        HashMap<String, CellStyle> cellStyleHashMap = createCellStyleHashMap(w);
         int i = 0;
         Row headerRow = sheet.createRow(i++);
         fillHeaderRow(headerRow);
@@ -47,7 +50,7 @@ public class CommonSupport {
                             item.getTestPath()
                     );
                     Row r = sheet.createRow(i++);
-                    fillResultRow(r, item);
+                    fillResultRow(r, item, cellStyleHashMap);
                     break;
                 default:
                     throw new Exception("Unrecognized CommonNameValueTestItem.getItemType() value: " + item.getItemType());
@@ -63,7 +66,6 @@ public class CommonSupport {
     public void writeSpreadsheet(String path, CommonTestInstance testInstance, Map<String, List<CommonNameValueTestItem>> mapOfTestItems) throws Exception {
         Workbook w = new XSSFWorkbook();
         Sheet sheet = w.createSheet();
-        createAllCellStyles(w);
         int i = 0;
         Row headerRow = sheet.createRow(i++);
         fillHeaderRow(headerRow);
@@ -156,7 +158,7 @@ public class CommonSupport {
         }
     }
 
-    private void fillResultRow(Row row, CommonNameValueTestItem item) {
+    private void fillResultRow(Row row, CommonNameValueTestItem item, Map<String, CellStyle> mapCellStyles) {
         int cellIndex = 0;
 
         Cell categoryCell = row.createCell(cellIndex++, CellType.STRING);
@@ -169,6 +171,11 @@ public class CommonSupport {
         Cell underTestCell = row.createCell(cellIndex++, CellType.STRING);
         Cell pathCell      = row.createCell(cellIndex++, CellType.STRING);
 
+        CellStyle cellStyle = mapCellStyles.get(item.getTestResult());
+        if (cellStyle != null) {
+            resultCell.setCellStyle(cellStyle);
+        }
+/*
         switch (item.getTestResult()) {
             case "PASS":
                 resultCell.setCellStyle(greenCellStyle);
@@ -186,6 +193,8 @@ public class CommonSupport {
                 break;
             default:
         }
+
+ */
 
         keyCell.      setCellValue("");
         resultCell.   setCellValue(item.getTestResult());
@@ -210,6 +219,8 @@ public class CommonSupport {
         Cell underTestCell = row.createCell(cellIndex++, CellType.STRING);
         Cell pathCell      = row.createCell(cellIndex++, CellType.STRING);
 
+        CellStyle cellStyle = null;
+/*
         switch (item.getTestResult()) {
             case "PASS":
                 resultCell.setCellStyle(greenCellStyle);
@@ -227,6 +238,7 @@ public class CommonSupport {
                 break;
             default:
         }
+        */
 
         categoryCell. setCellValue("");
         keyCell.      setCellValue(key);
@@ -238,38 +250,33 @@ public class CommonSupport {
         pathCell.     setCellValue(item.getTestPath());
     }
 
+    private HashMap<String, CellStyle> createCellStyleHashMap(Workbook w) {
+        HashMap<String, CellStyle> map = new HashMap<>();
 
-    private void createAllCellStyles(Workbook w) {
-        createGreenCellStyle(w);
-        createYellowCellStyle(w);
-        createOrangCellStyle(w);
-        createRedCellStyle(w);
-    }
-    private void createGreenCellStyle(Workbook w) {
-        greenCellStyle = w.createCellStyle();
-        greenCellStyle.setFillForegroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-        greenCellStyle.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-        greenCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        map.put("SUCCESS", createCellStyle(w,IndexedColors.BRIGHT_GREEN.getIndex()));
+        map.put("VERBOSE", createCellStyle(w,IndexedColors.WHITE.getIndex()));
+        map.put("WARNING", createCellStyle(w,IndexedColors.YELLOW.getIndex()));
+        map.put("ERROR",   createCellStyle(w,IndexedColors.RED.getIndex()));
+
+        return map;
     }
 
-    private void createYellowCellStyle(Workbook w) {
-        yellowCellStyle = w.createCellStyle();
-        yellowCellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-        yellowCellStyle.setFillBackgroundColor(IndexedColors.YELLOW.getIndex());
-        yellowCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+    private CellStyle createCellStyle(Workbook w, short index) {
+        CellStyle style = w.createCellStyle();
+        style.setFillForegroundColor(index);
+        style.setFillBackgroundColor(index);
+        style.setFillPattern(FillPatternType.NO_FILL);
+
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft  (BorderStyle.MEDIUM);
+        style.setBorderRight (BorderStyle.MEDIUM_DASHED);
+        style.setBorderTop   (BorderStyle.MEDIUM);
+
+        style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        style.setLeftBorderColor  (IndexedColors.BLACK.getIndex());
+        style.setRightBorderColor (IndexedColors.BLACK.getIndex());
+        style.setTopBorderColor   (IndexedColors.BLACK.getIndex());
+        return style;
     }
 
-    private void createOrangCellStyle(Workbook w) {
-        orangeCellStyle = w.createCellStyle();
-        orangeCellStyle.setFillForegroundColor(IndexedColors.ORANGE.getIndex());
-        orangeCellStyle.setFillBackgroundColor(IndexedColors.ORANGE.getIndex());
-        orangeCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-    }
-
-    private void createRedCellStyle(Workbook w) {
-        redCellStyle = w.createCellStyle();
-        redCellStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
-        redCellStyle.setFillBackgroundColor(IndexedColors.RED.getIndex());
-        redCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-    }
 }

@@ -8,7 +8,7 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import org.nrg.xnat.dicom.model.DicomObject;
+//import org.nrg.xnat.dicom.model.DicomObject;
 
 //import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -76,7 +76,7 @@ public class WIAMain {
             System.exit(1);
         }
     }
-
+/*
     private void testStudy(PrintWriter writer, String jsonString) throws Exception {
         ElementTestItem[] testSpecifications = {
                 new ElementTestItem("00080020", "EQUAL", "ERROR"),
@@ -99,6 +99,8 @@ public class WIAMain {
 //        DicomContentTester.testStudyArrayContent(writer, referenceMap, underTestMap, Arrays.asList(testSpecifications));
     }
 
+
+ */
     public void requestStudy() throws Exception {
         Response response = RestAssured.get("http://mac-mini:8042/dicom-web/studies");
         String x = response.toString();

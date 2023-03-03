@@ -1,0 +1,20 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	initial	initialSelector	initialMimeType	initialXPath	derived	derivedSelector	derivedMimeType	derivedXPath	doc Reference	comments	hl7 v2 xsl	doc entry xsl	referenceValue
+R	ERROR	0	EQ	MSH.9.1 -> documentEntry.classCode.value	$OUTPUT/accept-extract	document	x-application/hl7-v2+er7	"substring(MSH/field[7],1,3)"	$OUTPUT/accept-extract	documentEntry	x-application/hl7-v2+er7	Classification[@classificationScheme='urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a']/@nodeRepresentation	PCC 360X 3:3.55.4.3.2.1.2	"Identifies the specific document type, in this case an HL7 V2 Order."			OMG
+#R2				ORC.28 -> documentEntry.confidentialityCode													
+R2	WARNING	0	EQ	MSH.7 -> documentEntry.creationTime	$OUTPUT/accept-extract	document	x-application/hl7-v2+er7	MSH/field[5]	$OUTPUT/accept-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='creationTime']/ValueList/Value	PCC 360X 3:3.55.4.3.2.1.2	Defines the creation time of the order message (as opposed to the order itself). Date/Time of Message in MSH-7. In the metadata the timestamp shall be in UTC time.	MSH/field[5]	Slot[@name='creationTime']/ValueList/Value	NA
+#				entryUUID													
+#				formatCode													
+#				hash													
+#				healthcareFacilityTypeCode													
+#				languageCode													
+#				mimeType													
+R	ERROR	0	EQ	patientId	$OUTPUT/accept-extract	submissionSet	NA	./ExternalIdentifier[@identificationScheme='urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446']/@value	$OUTPUT/accept-extract	documentEntry	x-application/hl7-v2+er7	./ExternalIdentifier[@identificationScheme='urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427']/@value	PCC 360X 3:3.55.4.1.2.1.2	"The patient ID known to the Referral Initiator. This is either the value of the patientId attribute from the Referral Request, or the value of the sourcePatientId attribute. This value must be the same for the Submission Set, and the other Document entries See PCC TF-1: X.1.3.1"			
+#				practiceSettingCode													
+#				size													
+#				sourcePatientId													
+#				sourcePatientInfo													
+#				typeCode													
+#				uniqueId													
+#				URI													
+#				referencedIdList													
+#				objectType													

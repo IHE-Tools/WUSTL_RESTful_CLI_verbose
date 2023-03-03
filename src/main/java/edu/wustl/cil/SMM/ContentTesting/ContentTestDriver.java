@@ -9,7 +9,7 @@ import edu.wustl.cil.SMM.RESTfulTesting.NameValueTestItem;
 import edu.wustl.cil.SMM.RESTfulTesting.RESTfulTestInstance;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
+//import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
 
 import java.io.File;
 import java.io.FileWriter;

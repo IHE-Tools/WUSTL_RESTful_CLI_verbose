@@ -4,11 +4,12 @@ import java.io.PrintWriter;
 import java.util.Map;
 import java.util.List;
 
-import org.nrg.xnat.dicom.model.DicomObject;
-import org.nrg.xnat.dicom.model.DicomAttribute;
+//import org.nrg.xnat.dicom.model.DicomObject;
+//import org.nrg.xnat.dicom.model.DicomAttribute;
 
 public class DicomContentTester {
 
+    /*
     public static void testStudyArrayContent(PrintWriter writer, TestInstance testInstance, Map<String, DicomObject> reference, Map<String, DicomObject> underTest, List<ElementTestItem> testList, String objectCount) {
         writer.println("\nTesting returned objects against a reference set." +
                 "\n Number of objects in reference data set: " + reference.size() +
@@ -46,7 +47,9 @@ public class DicomContentTester {
             }
         }
     }
+*/
 
+    /*
     public static void testArrayContentNoReference(PrintWriter writer, TestInstance testInstance, Map<String, DicomObject> underTest, List<ElementTestItem> testList, String objectCount) {
         writer.println("\nTesting returned objects to determine if they contain required elements; content is not tested." +
                 "\n Number of objects in response: " + underTest.size());
@@ -55,8 +58,10 @@ public class DicomContentTester {
             testOneDicomObject(writer, testInstance, identifier,null, testObject, testList);
         }
     }
+    */
 
 
+/*
     public static void testOneDicomObject(PrintWriter writer, TestInstance testInstance, String identifier, DicomObject reference, DicomObject underTest, List<ElementTestItem> testList) {
         writer.println();
         writer.println("Identifier of object under test:       " + identifier);
@@ -68,50 +73,8 @@ public class DicomContentTester {
             DicomAttribute referenceAttribute = (reference == null) ? null : reference.findAttributeByTag(tag);
             DicomAttribute underTestAttribute = underTest.findAttributeByTag(tag);
             t.testAttribute(writer, testInstance, referenceAttribute, underTestAttribute);
-            /*
-            switch (referenceAttribute.getVr()) {
-                case AE:
-                case AS:
-                case AT:
-                case CS:
-                case DA:
-                case DS:
-                case DT:
-                case FD:
-                case FL:
-                case IS:
-                case LO:
-                case LT:
-                case OB:
-                case OD:
-                case OF:
-                case OL:
-                case OW:
-                case PN:
-                case SH:
-                case SL:
-                case SQ:
-                case SS:
-                case ST:
-                case TM:
-                case UC:
-                case UI:
-                case UL:
-                case UN:
-                case UR:
-                case US:
-                case UT:
-                    break;
-                default:
-                    System.out.println("No test operator for ");
-            }
-            referenceAttribute.
-            String referenceString = reference.findAttributeByTag(tag).getSingletonStringValue();
-            String stringUnderTest = underTest.findAttributeByTag(tag).getSingletonStringValue();
-
-            t.testValue(referenceString, stringUnderTest);
-            */
         }
 
     }
+*/
 }

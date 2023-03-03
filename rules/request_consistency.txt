@@ -1,0 +1,34 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	initial	initialSelector	initialMimeType	initialXPath	derived	derivedSelector	derivedMimeType	derivedXPath	doc Reference	comments	hl7 v2 xsl	doc entry xsl	referenceValue
+R2	WARNING	0	EQ	ORC-12 -> documentEntry.author	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	ORC/field[12]	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Classification[@classificationScheme='urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d']/Slot[@name='authorPerson']/ValueList/Value	PCC 360X 3:3.55.4.1.2.1.2	"If supplied, MUST indicate the clinician who is requesting the referral. Ordering Provider in ORC-12."			
+R	ERROR	0	EQ	MSH.9.1 -> documentEntry.classCode.value	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	"substring(MSH/field[7],1,3)"	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Classification[@classificationScheme='urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a']/@nodeRepresentation	PCC 360X 3:3.55.4.1.2.1.2	"Identifies the specific document type, in this case an HL7 V2 Order."			OMG
+#R2				ORC.28 -> documentEntry.confidentialityCode													
+R2	WARNING	0	EQ	MSH.7 -> documentEntry.creationTime	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	MSH/field[5]	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='creationTime']/ValueList/Value	PCC 360X 3:3.55.4.1.2.1.2	Defines the creation time of the order message (as opposed to the order itself). Date/Time of Message in MSH-7. In the metadata the timestamp shall be in UTC time.	MSH/field[5]	Slot[@name='creationTime']/ValueList/Value	NA
+#				entryUUID													
+#				formatCode													
+#				hash													
+#				healthcareFacilityTypeCode													
+#				languageCode													
+#				mimeType													
+#				patientId													
+#				practiceSettingCode													
+#				size													
+#				sourcePatientId													
+#				sourcePatientInfo													
+#				typeCode													
+#				uniqueId													
+#				URI													
+R	WARNING	0	EQ	PID.3 == documentEntry.sourcePatientId (HL7 V2)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.3	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='sourcePatientId']/ValueList/Value	PCC 2:3.55.1.2.1.2	If you get a warning, it is possible that the value in PID.3 contains a CX Identifier Type. The next test line will strip the identifier type before making a comparison.			
+R	ERROR	0	EQ.PID	PID.3 ==(PID) documentEntry.sourcePatientId (HL7 V2)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.3	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='sourcePatientId']/ValueList/Value	PCC 2:3.55.1.2.1.2	This is for the case where Patient ID is passed in sourcePatientId. Before comparison, the CX Identifier Type is stripped.			
+R	WARNING	0	EQ	PID.3 == documentEntry.sourcePatientId (CDA)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.3	$OUTPUT/request-extract	documentEntry	text/xml	Slot[@name='sourcePatientId']/ValueList/Value	PCC 2:3.55.1.2.1.3	If you get a warning, it is possible that the value in PID.3 contains a CX Identifier Type. The next test line will strip the identifier type before making a comparison.			
+R	ERROR	0	EQ.PID	PID.3 ==(PID) documentEntry.sourcePatientId (CDA)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.3	$OUTPUT/request-extract	documentEntry	text/xml	Slot[@name='sourcePatientId']/ValueList/Value	PCC 2:3.55.1.2.1.3	This is for the case where Patient ID is passed in sourcePatientId. Before comparison, the CX Identifier Type is stripped.			
+R	ERROR	0	EQ	ORC.2 == OBR.2	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://ORC.2	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://OBR.2	PCC 360X 2:3.55.4.1.2.2	All see 360X 1: 1.3.1			
+R	ERROR	0	EQ	ORC.2 == submissionSet.referencedIdList	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://ORC.2	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	PCC 360X 1:1.3.1	"The Referral Initiator shall provide a unique identifier for the referral with the initial referral request, and must use the same referral identifier in any subsequent communications throughout a single referral information exchange. This identifier shall be present in the metadata for the XDM submission set and document entries, and in the ORC and OBR segments of the HL7 V2 messages."			
+R	ERROR	0	EQ	ORC.2 == documentEntry.referencedIdList (HL7 V2)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://ORC.2	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	PCC 360X 1:1.3.1	See above			
+R	ERROR	0	EQ	ORC.2 == documentEntry.referencedIdList (CDA)	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://ORC.2	$OUTPUT/request-extract	documentEntry	text/xml	Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	PCC 360X 1:1.3.1	See above and 360X 2:3.55.4.1.2.1.3. This is also required for the Clinical Document (aka CDA)			
+R	ERROR	0	EQ	submissionSet.referencedIdList == documentEntry.referencedIdList (HL7 V2)	$OUTPUT/request-extract	submissionSet	NA	./Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	$OUTPUT/request-extract	documentEntry	x-application/hl7-v2+er7	Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	PCC 360X 1:1.3.1	See above			
+R	ERROR	0	EQ	submissionSet.referencedIdList == documentEntry.referencedIdList (CDA)	$OUTPUT/request-extract	submissionSet	NA	./Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	$OUTPUT/request-extract	documentEntry	text/xml	Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	PCC 360X 1:1.3.1	See above and 360X 2:3.55.4.1.2.1.3. This is also required for the Clinical Document (aka CDA)			
+#				objectType													
+#																	
+#														Consistency between HL7V2 and CDA document			
+R	ERROR	0	EQ	PID.5.1 == CDA Family Name	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.5.1	$OUTPUT/request-extract	document	text/xml	recordTarget/patientRole/patient/name/family		Check patient name in HL7V2 message vs CDA Document			
+R	ERROR	0	EQ	PID.5.2 == CDA Given Name	$OUTPUT/request-extract	document	x-application/hl7-v2+er7	HL7V2://PID.5.2	$OUTPUT/request-extract	document	text/xml	recordTarget/patientRole/patient/name/given		Check patient name in HL7V2 message vs CDA Document			

@@ -1,0 +1,9 @@
+# label / xsl
+authorTelecommunication	Classification[@classificationScheme='urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d']/Slot[@name='authorTelecommunication']/ValueList/Value
+Classification.objectType	./Classification/@objectType
+objectType	@objectType
+status	@status
+submissionTime	./Slot[@name='submissionTime']/ValueList/Value
+intendedRecipient	./Slot[@name='intentedRecipient']/ValueList/Value
+referenceIdList	./Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value
+Classification.objectType	./Classification/@objectType

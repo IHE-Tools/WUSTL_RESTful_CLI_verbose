@@ -1,0 +1,26 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	xsl	referenceValue	doc Reference	comments
+R	ERROR	0	NOTNULL	author.authorTelecommunication	Classification[@classificationScheme='urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d']/Slot[@name='authorTelecommunication']/ValueList/Value	NA	PCC 360X 1:3.55.4.1.2.1.1	The e-mail address of the Referral Initiator is placed in the authorTelecommunication slot of the author classification.
+R	ERROR	0	EQ	contentTypeCode.code	Classification[@classificationScheme='urn:uuid:aa543740-bdda-424e-8c96-df4873be8500']/@nodeRepresentation	57133-1	PCC 360X 1:3.55.4.1.2.1.1	LOINC Code 57133-1 is used to indicate that this Submission Set is part of a referral
+R	ERROR	0	EQ	contentTypeCode.scheme	Classification[@classificationScheme='urn:uuid:aa543740-bdda-424e-8c96-df4873be8500']/Slot[@name='codingScheme']/ValueList/Value	2.16.840.1.113883.6.1	PCC 360X 1:3.55.4.1.2.1.1	LOINC Code 57133-1 is used to indicate that this Submission Set is part of a referral
+R	ERROR	0	NOTNULL	entryUUID	./@id	NA	PCC 360X 1:3.55.4.1.2.1.1	Assigned by the Referral Initiator when the Submission Set was created
+R	ERROR	1	NOTNULL	intendedRecipient	./Slot[@name='intendedRecipient']/ValueList/Value	^Internet^	PCC 360X 1:3.55.4.1.2.1.1	The Direct address of the Referral Recipient.
+R2	INFO	0	COMMENT	patientId	./ExternalIdentifier[@identificationScheme='urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446']/@value	NA	PCC 360X 1:3.55.4.1.2.1.1	"The patient ID known to the Referral Recipient. How the Referral Initiator obtains this information is out of scope for this profile. This value, if present, must be the same for the Submission Set, and the Document Entries within it. In this test case, we assume the source does not know the patient ID known to the Referral Recipient."
+R	ERROR	0	NOTNULL	sourceId	./ExternalIdentifier[@identificationScheme='urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832']/@value	NA	PCC 360X 1:3.55.4.1.2.1.1	Globally unique identifier representing the entity which created the submission set. Usually an organizational identifier.
+R	ERROR	0	NOTNULL	submissionTime	./Slot[@name='submissionTime']/ValueList/Value	NA	PCC 360X 1:3.55.4.1.2.1.1	Represents the point in time at the creating entity when the Submission Set was created.
+R	ERROR	0	NOTNULL	uniqueId	./ExternalIdentifier[@identificationScheme='urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8']/@value	NA	PCC 360X 1:3.55.4.1.2.1.1	Globally unique identifier assigned to the submission set by its creator.
+R	ERROR	0	NOTNULL	referenceIdList	./Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	NA	PCC 360X 1:3.55.4.1.2.1.1	"The referenceIdList contains the referral ID, as described in PCC TF-1: X.1.3.1 This attribute is currently only defined by IHE for the Document Entry metadata. Since it is a slot, however, it is not prohibited from being added to the Submission Set metadata."
+#								Items below here are standard XDS* requirements
+#R2		0	NOTNULL	author				
+#O		0	NOTNULL	availabilityStatus				
+#O		0	NOTNULL	comments				
+#R2		0	NOTNULL	contentTypeCode.code				
+#R2		0	NOTNULL	contentTypeCode.scheme				
+#R		0	NOTNULL	entryUUID				
+#O		0	NOTNULL	homeCommunityID				
+#R2		0	NOTNULL	intendedRecipient				
+#O		0	NOTNULL	limitedMetadata				
+#R2		0	NOTNULL	patientId				
+#R		0	NOTNULL	sourceId				
+#R		0	NOTNULL	submissionTime				
+#O		0	NOTNULL	title				
+#R		0	NOTNULL	uniqueId				

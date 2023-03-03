@@ -11,8 +11,8 @@ import edu.wustl.cil.TestingWIA.DicomFactory;
 import edu.wustl.cil.TestingWIA.ElementTestItem;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
-import org.nrg.xnat.dicom.model.DicomObject;
+//import org.nrg.xnat.dicom.jackson.module.JsonDicomWebDeserializationModule;
+//import org.nrg.xnat.dicom.model.DicomObject;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -60,7 +60,7 @@ public class RESTfulTestDriver extends CommonTestDriver {
         ArrayList<RESTfulTestInstance> testInstances = new ArrayList<>();
 
         for (String testCase: testIndex) {
-            testInstances.add(executeOneServerTest(testCase));
+//            testInstances.add(executeOneServerTest(testCase));    FIX
         }
 
         String summaryFile = logFolder + "/summary.txt";
@@ -84,6 +84,7 @@ public class RESTfulTestDriver extends CommonTestDriver {
         Files.createDirectories(p);
     }
 
+    /*
     private RESTfulTestInstance executeOneServerTest(String testCase) throws Exception {
         System.out.println(testCase);
 
@@ -117,7 +118,7 @@ public class RESTfulTestDriver extends CommonTestDriver {
         writer.close();
         return testInstance;
     }
-
+     */
     private void writeSpreadsheet(RESTfulTestInstance testInstance, Map<String, List<CommonNameValueTestItem>> mapOfTestItems) throws Exception {
 
         if (testInstance.get("SpreadsheetOutput") != null && mapOfTestItems != null) {
@@ -126,7 +127,7 @@ public class RESTfulTestDriver extends CommonTestDriver {
         }
     }
 
-
+/*
     private void testBundleMetaData(PrintWriter writer, Response response, RESTfulTestInstance testInstance) throws Exception {
         objectMapper.registerModule(JsonDicomWebDeserializationModule.build());
 
@@ -140,6 +141,8 @@ public class RESTfulTestDriver extends CommonTestDriver {
         CommonContentTester tester = new CommonContentTester();
         tester.testJsonNameValues(writer, "Bundle Metadata", testInstance, nodeReference, nodeUnderTest, testItems);
     }
+    */
+
 
     private void testResponseCode(PrintWriter writer, Response response, RESTfulTestInstance testInstance) {
         int returnedResponseCode = response.getStatusCode();
@@ -195,7 +198,7 @@ public class RESTfulTestDriver extends CommonTestDriver {
         }
         return mapOfResults;
     }
-
+/*
     private void testJSONResponse(PrintWriter writer, Response response, RESTfulTestInstance testInstance) throws Exception {
         objectMapper.registerModule(JsonDicomWebDeserializationModule.build());
 
@@ -207,22 +210,10 @@ public class RESTfulTestDriver extends CommonTestDriver {
 
 //        writer.println("Response body from peer\n" + responseBody + "\n");
         writer.flush();
-
-//        DicomObject[] underTestArray = new DicomObject[0];
-//        if (responseBody != null && responseBody.length() != 0) {
-//            underTestArray = objectMapper.readValue(responseBody, DicomObject[].class);
-//        }
-//        Map<String, DicomObject> underTestMap = DicomFactory.constructDicomSetFromArray(underTestArray, level);
-//
-//        if (referenceString == null) {
-//            DicomContentTester.testArrayContentNoReference(writer, testInstance, underTestMap, testItems, objectCount);
-//        } else {
-//            DicomObject[] referenceArray = (referenceString == null) ? null: objectMapper.readValue(referenceString, DicomObject[].class);
-//            Map<String, DicomObject> referenceMap = DicomFactory.constructDicomSetFromArray(referenceArray, level);
-//            DicomContentTester.testStudyArrayContent(writer, testInstance, referenceMap, underTestMap, testItems, objectCount);
-//        }
     }
 
+
+ */
 
     public void logTestMetadata(PrintWriter writer, RESTfulTestInstance testInstance, Header header) throws Exception {
         writer.println("Test begins: " + LocalDateTime.now());

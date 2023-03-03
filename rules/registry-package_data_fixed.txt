@@ -1,0 +1,10 @@
+# optionality / errorType / comparisonOperator / label / xsl / referenceValue / doc Reference / comments							
+#R	ERROR	NOTNULL	authorTelecommunication	./Classification[@classificationScheme='urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d']/Slot[@name='authorTelecommunication']/ValueList/Value		PCC 360X 1:3.55.4.1.2.1.1	NA
+R	ERROR	NOTNULL	authorTelecommunication	Classification[@classificationScheme='urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d']/Slot[@name='authorTelecommunication']/ValueList/Value	urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification	X	NA
+R	ERROR	EQ	Classification.objectType	./Classification/@objectType	urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classificationx	X	NA
+R	ERROR	EQ	objectType	@objectType	urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:RegistryPackage	X	NA
+R	ERROR	EQ	status	@status	urn:oasis:names:tc:ebxml-regrep:StatusType:Approved	X	NA
+R	ERROR	NOTNULL	submissionTime	./Slot[@name='submissionTime']/ValueList/Value	YYYYMMDDhhmm	X	NA
+R	ERROR	NOTNULL	intendedRecipient	./Slot[@name='intentedRecipient']/ValueList/Value	XXXXXXX	X	NA
+R	ERROR	NOTNULL	referenceIdList	./Slot[@name='urn:ihe:iti:xds:2013:referenceIdList']/ValueList/Value	XXXXXXX	X	NA
+R	ERROR	EQ	Classification.objectType	./Classification/@objectType	urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification	X	NA

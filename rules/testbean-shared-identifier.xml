@@ -1,0 +1,83 @@
+<TestBean>
+    <testName>Name</testName>
+    <testDescription>Description</testDescription>
+    <keyValueFile>Key Value File</keyValueFile>
+    <testStepBeanArrayList>
+        <testStepBean>
+            <stepIdentifier>step-1</stepIdentifier>
+            <description>Extract 360x Request: XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <inputFolder>request</inputFolder>
+            <outputFolder>request-extract</outputFolder>
+        </testStepBean>
+<!--
+        <testStepBean>
+            <stepIdentifier>step-2</stepIdentifier>
+            <description>Extract 360x Accept: XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <inputFolder>accept</inputFolder>
+            <outputFolder>accept-extract</outputFolder>
+        </testStepBean>
+        <testStepBean>
+            <stepIdentifier>step-3</stepIdentifier>
+            <description>Extract 360x Outcome: XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <inputFolder>outcome</inputFolder>
+            <outputFolder>outcome-extract</outputFolder>
+        </testStepBean>
+        -->
+        
+        <testStepBean>
+            <stepIdentifier>step-10</stepIdentifier>
+            <description>Test Metadata Consistency, Initiator</description>
+            <optionality>R</optionality>
+            <action>MetadataConsistency</action>
+            <inputReference>$OUTPUT/step-1/registry.csv</inputReference>
+            <inputType>RegistryPackage</inputType>
+            <inputToTest>$OUTPUT/step-1/objects.csv</inputToTest>
+            <toTestType>ExtrinsicObject</toTestType>
+            <fieldSpecification>initiator_metadata_consistency.txt</fieldSpecification>
+            <outputFolder>step-10</outputFolder>  
+        </testStepBean>
+        <!--
+        <testStepBean>
+            <stepIdentifier>step-11</stepIdentifier>
+            <description>Compare Metadata, Accept, HL7 V2</description>
+            <optionality>R</optionality>
+            <action>CompareMetadata</action>
+            <inputReference>$OUTPUT/step-1/objects.csv</inputReference>
+            <inputToTest>$OUTPUT/step-2/objects.csv</inputToTest>
+            <mimeTypeReference>x-application/hl7-v2+er7</mimeTypeReference>
+            <mimeTypeToTest>x-application/hl7-v2+er7</mimeTypeToTest>
+            <outputFolder>step-11</outputFolder>
+        </testStepBean>
+        <testStepBean>
+            <stepIdentifier>step-12</stepIdentifier>
+            <description>Compare Metadata, Outcome, HL7 V2</description>
+            <optionality>R</optionality>
+            <action>CompareMetadata</action>
+            <inputReference>$OUTPUT/step-1/objects.csv</inputReference>
+            <inputToTest>$OUTPUT/step-3/objects.csv</inputToTest>
+            <mimeTypeReference>x-application/hl7-v2+er7</mimeTypeReference>
+            <mimeTypeToTest>x-application/hl7-v2+er7</mimeTypeToTest>
+            <outputFolder>step-12</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-21</stepIdentifier>
+            <description>Compare Metadata, Request, Fixed</description>
+            <optionality>R</optionality>
+            <action>CompareMetadataFixed</action>
+            <fieldNamesValues>registry-package_data_fixed.txt</fieldNamesValues>
+            <inputToTest>$OUTPUT/step-1/registry.csv</inputToTest>
+            <outputFolder>step-21</outputFolder>
+        </testStepBean>
+-->
+    </testStepBeanArrayList>
+</TestBean>

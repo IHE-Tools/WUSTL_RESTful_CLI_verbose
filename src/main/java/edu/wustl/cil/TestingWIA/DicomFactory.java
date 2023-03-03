@@ -4,9 +4,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-import org.nrg.xnat.dicom.model.DicomObject;
+//import org.nrg.xnat.dicom.model.DicomObject;
 
 public class DicomFactory {
+/*
     static public Map<String, DicomObject> constructDicomStudySet(List<DicomObject> arrayList) {
         HashMap<String, DicomObject> map = new HashMap<>();
 
@@ -57,4 +58,6 @@ public class DicomFactory {
         }
         return map;
     }
+
+ */
 }

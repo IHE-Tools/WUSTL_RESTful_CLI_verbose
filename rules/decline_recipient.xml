@@ -1,0 +1,60 @@
+<TestBean>
+    <testName>Name</testName>
+    <testDescription>Description</testDescription>
+    <keyValueFile>Key Value File</keyValueFile>
+    <testStepBeanArrayList>
+
+<!-- Extract the initial request to be used for reference later -->
+        <testStepBean>
+            <stepIdentifier>step-110a</stepIdentifier>
+            <description>Referral Request Index Files</description>
+            <optionality>R</optionality>
+            <action>Extract360XSubmission</action>
+            <registryPackageElements>registry-package_elements.txt</registryPackageElements>
+            <inputFolder>request</inputFolder>
+            <outputFolder>request-extract</outputFolder>
+        </testStepBean>
+
+<!-- Extract and run tests on the Decline message -->
+        <testStepBean>
+            <stepIdentifier>step-130a</stepIdentifier>
+            <description>Decline Index Files</description>
+            <optionality>R</optionality>
+            <action>Extract360XSubmission</action>
+            <registryPackageElements>registry-package_elements.txt</registryPackageElements>
+            <inputFolder>decline</inputFolder>
+            <outputFolder>decline-extract</outputFolder>
+        </testStepBean>
+      
+        <testStepBean>
+            <stepIdentifier>step-130b</stepIdentifier>
+            <description>Decline / Conformance</description>
+            <optionality>R</optionality>
+            <action>Conformance</action>
+            <conformanceRequirements>decline_conformance.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/decline-extract</inputFolder>
+            <outputFolder>step-130b</outputFolder>
+        </testStepBean>
+
+        <testStepBean>
+            <stepIdentifier>step-130c</stepIdentifier>
+            <description>Decline / Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>decline_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/decline-extract</inputFolder>
+            <outputFolder>step-130c</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-130d</stepIdentifier>
+            <description>Cross Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>cross_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/decline-extract</inputFolder>
+            <outputFolder>step-140d</outputFolder>
+        </testStepBean>
+
+    </testStepBeanArrayList>
+</TestBean>

@@ -1,0 +1,202 @@
+<TestBean>
+    <testName>Name</testName>
+    <testDescription>Description</testDescription>
+    <keyValueFile>Key Value File</keyValueFile>
+    <testStepBeanArrayList>
+
+        <testStepBean>
+            <stepIdentifier>step-10a</stepIdentifier>
+            <description>Request Extract XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <registryPackageElements>registry-package_elements.txt</registryPackageElements>
+            <inputFolder>request</inputFolder>
+            <outputFolder>request-extract</outputFolder>
+        </testStepBean>
+
+        <testStepBean>
+            <stepIdentifier>step-10b</stepIdentifier>
+            <description>Request / Conformance</description>
+            <optionality>R</optionality>
+            <action>Conformance</action>
+            <conformanceRequirements>request_conformance.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10b</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-10c</stepIdentifier>
+            <description>Request / Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>request_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10c</outputFolder>
+        </testStepBean>
+      
+        <testStepBean>
+            <stepIdentifier>step-20a</stepIdentifier>
+            <description>Accept Request XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <registryPackageElements>registry-package_elements.txt</registryPackageElements>
+            <inputFolder>accept</inputFolder>
+            <outputFolder>accept-extract</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-20b</stepIdentifier>
+            <description>Accept / Conformance</description>
+            <optionality>R</optionality>
+            <action>Conformance</action>
+            <conformanceRequirements>accept_conformance.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/accept-extract</inputFolder>
+            <outputFolder>step-20b</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-20c</stepIdentifier>
+            <description>Accept / Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>accept_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/accept-extract</inputFolder>
+            <outputFolder>step-20c</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-30c</stepIdentifier>
+            <description>Cross Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>cross_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/accept-extract</inputFolder>
+            <outputFolder>step-30c</outputFolder>
+        </testStepBean>
+        
+
+<!--
+
+        <testStepBean>
+            <stepIdentifier>step-10c</stepIdentifier>
+            <description>Document Entry, Request, HL7 V2, Conformance to 360X Fixed Requirements</description>
+            <optionality>R</optionality>
+            <action>DocumentEntry-Conformance-HL7V2</action>
+            <conformanceRequirements>document-entry_data_hl7v2_fixed.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10c</outputFolder>
+        </testStepBean>
+        <testStepBean>
+            <stepIdentifier>step-10d</stepIdentifier>
+            <description>Document Entry, Request, CDA, Conformance to 360X Fixed Requirements</description>
+            <optionality>R</optionality>
+            <action>DocumentEntry-Conformance-CDA</action>
+            <conformanceRequirements>document-entry_data_cda_fixed.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10c</outputFolder>
+        </testStepBean>
+        <testStepBean>
+            <stepIdentifier>step-10e</stepIdentifier>
+            <description>Document, Request, HL7 V2, Conformance to 360X Fixed Requirements</description>
+            <optionality>R</optionality>
+            <action>Document-Conformance-HL7V2</action>
+            <conformanceRequirements>document_data_hl7v2_fixed.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10e</outputFolder>
+        </testStepBean>
+        <testStepBean>
+            <stepIdentifier>step-10g</stepIdentifier>
+            <description>Doc Entry / Document, Request, HL7 V2, Consistency</description>
+            <optionality>R</optionality>
+            <action>DocumentEntry_Document-Consistency-HL7V2</action>
+            <consistencyRequirements>doc-entry_hl7_v2_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10g</outputFolder>
+        </testStepBean>
+-->
+
+<!--
+        <testStepBean>
+            <stepIdentifier>step-2</stepIdentifier>
+            <description>Extract 360x Accept: XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <inputFolder>accept</inputFolder>
+            <outputFolder>accept-extract</outputFolder>
+        </testStepBean>
+        -->
+        <!--
+        <testStepBean>
+            <stepIdentifier>step-3</stepIdentifier>
+            <description>Extract 360x Outcome: XDM</description>
+            <optionality>R</optionality>
+            <action>ExtractXDM</action>
+            <attachment>zip</attachment>
+            <inputFolder>outcome</inputFolder>
+            <outputFolder>outcome-extract</outputFolder>
+        </testStepBean>
+        -->
+
+        
+<!--        
+
+-->        
+        
+        
+<!--        <testStepBean>
+            <stepIdentifier>step-11</stepIdentifier>
+            <description>Submission Set Consistency, Initiator</description>
+            <optionality>R</optionality>
+            <action>SubmissionSetConsistency</action>
+
+            <inputToTest>$OUTPUT/step-1/objects.csv</inputToTest>
+            <toTestType>ExtrinsicObject</toTestType>
+            <fieldSpecification>initiator_metadata_consistency_seperate_identifier.txt</fieldSpecification>
+            <outputFolder>step-11</outputFolder>  
+        </testStepBean>-->
+        
+<!--
+        <testStepBean>
+            <stepIdentifier>step-12</stepIdentifier>
+            <description>Compare Metadata, Accept, HL7 V2</description>
+            <optionality>R</optionality>
+            <action>DocumentEntry-Linkage</action>
+            <conformanceRequirements>document-entry_data_linked.txt</conformanceRequirements>
+            <referenceFolder>$OUTPUT/accept-extract</referenceFolder>
+            <submittedFolder>$OUTPUT/request-extract</submittedFolder>
+            <mimeTypeReference>x-application/hl7-v2+er7</mimeTypeReference>
+            <mimeTypeToTest>x-application/hl7-v2+er7</mimeTypeToTest>
+            <outputFolder>step-12</outputFolder>
+        </testStepBean>
+        -->
+        
+<!--
+        <testStepBean>
+            <stepIdentifier>step-12</stepIdentifier>
+            <description>Compare Metadata, Outcome, HL7 V2</description>
+            <optionality>R</optionality>
+            <action>CompareMetadata</action>
+            <inputReference>$OUTPUT/step-1/objects.csv</inputReference>
+            <inputToTest>$OUTPUT/step-3/objects.csv</inputToTest>
+            <mimeTypeReference>x-application/hl7-v2+er7</mimeTypeReference>
+            <mimeTypeToTest>x-application/hl7-v2+er7</mimeTypeToTest>
+            <outputFolder>step-12</outputFolder>
+        </testStepBean>
+       
+        <testStepBean>
+            <stepIdentifier>step-21</stepIdentifier>
+            <description>Compare Metadata, Request, Fixed</description>
+            <optionality>R</optionality>
+            <action>CompareMetadataFixed</action>
+            <fieldNamesValues>registry-package_data_fixed.txt</fieldNamesValues>
+            <inputToTest>$OUTPUT/step-1/registry.csv</inputToTest>
+            <outputFolder>step-21</outputFolder>
+        </testStepBean>
+        
+        -->
+
+    </testStepBeanArrayList>
+</TestBean>

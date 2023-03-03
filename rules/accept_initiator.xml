@@ -1,0 +1,38 @@
+<TestBean>
+    <testName>Name</testName>
+    <testDescription>Description</testDescription>
+    <keyValueFile>Key Value File</keyValueFile>
+    <testStepBeanArrayList>
+
+        <testStepBean>
+            <stepIdentifier>step-10a</stepIdentifier>
+            <description>Referral Request Index Files</description>
+            <optionality>R</optionality>
+            <action>Extract360XSubmission</action>
+            <registryPackageElements>registry-package_elements.txt</registryPackageElements>
+            <inputFolder>request</inputFolder>
+            <outputFolder>request-extract</outputFolder>
+        </testStepBean>
+
+        <testStepBean>
+            <stepIdentifier>step-10b</stepIdentifier>
+            <description>Request / Conformance</description>
+            <optionality>R</optionality>
+            <action>Conformance</action>
+            <conformanceRequirements>request_conformance.txt</conformanceRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10b</outputFolder>
+        </testStepBean>
+        
+        <testStepBean>
+            <stepIdentifier>step-10c</stepIdentifier>
+            <description>Request / Consistency</description>
+            <optionality>R</optionality>
+            <action>Consistency</action>
+            <consistencyRequirements>request_consistency.txt</consistencyRequirements>
+            <inputFolder>$OUTPUT/request-extract</inputFolder>
+            <outputFolder>step-10c</outputFolder>
+        </testStepBean>
+
+    </testStepBeanArrayList>
+</TestBean>

@@ -1,0 +1,7 @@
+# optionality	errorType	iteratedOperation	comparisonOperator	label	hl7 v2 xsl	doc entry xsl	referenceValue	doc Reference	comments
+#R2	WARNING	0	EQ	ORC-12 -> author					
+R	ERROR	0	EQ	MSH.9.1 -> classCode.value	"substring(MSH/field[7],1,3)"	Classification[@classificationScheme='urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a']/@nodeRepresentation	OMG	PCC 360X 3:3.55.4.1.2.1.2	"Identifies the specific document type, in this case an HL7 V2 Order."
+R2	WARNING	0	VISUAL	MSH.7 -> creationTime	MSH/field[5]	Slot[@name='creationTime']/ValueList/Value	NA	PCC 360X 3:3.55.4.1.2.1.2	Please perform visual inspection of two date/time fields. In the metadata (submitted value) the timestamp shall be in UTC time.
+#									Next one needs work
+R2	WARNING	0	EQ.PID	PID.3 ==(PID) documentEntry.sourcePatientId	PID/field[3]/text()	Slot[@name='sourcePatientInfo']/ValueList/Value	NA	PCC 360X 3:3.55.4.1.2.1.2	The patient ID known to the Referral Recipient. How the Referral Initiator obtains this information is out of scope for this profile.
+R2	WARNING	0	EQ	PID.3 == documentEntry.sourcePatientId	PID/field[3]/text()	Slot[@name='sourcePatientInfo']/ValueList/Value	NA	PCC 360X 3:3.55.4.1.2.1.2	If the line above is green and you get a warning on this line, it is possible that the PID.3 value contains a CX Identifier Type.

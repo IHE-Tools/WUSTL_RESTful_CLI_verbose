@@ -1,7 +1,7 @@
 package edu.wustl.cil.SMM.RESTfulTesting;
 
 import edu.wustl.cil.TestingWIA.TestInstance;
-import org.nrg.xnat.dicom.model.DicomAttribute;
+//import org.nrg.xnat.dicom.model.DicomAttribute;
 
 import java.io.PrintWriter;
 
